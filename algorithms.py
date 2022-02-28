@@ -1,5 +1,5 @@
 from asyncio.windows_events import NULL
-from types import Poset, LinearOrder
+from classes import Poset, LinearOrder
 
 def combinePoset(poset1: Poset, poset2: Poset):
     if len(poset1.relations) != len(poset2.relations):
