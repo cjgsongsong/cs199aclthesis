@@ -29,6 +29,7 @@ class Poset():
         return sorted(relations)
     
     def transitiveReduce(self) -> None:
+        # transitive reduction
         pass
 
     def generateLinearExtensions(self) -> LinearOrders:
