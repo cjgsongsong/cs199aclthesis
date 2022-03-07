@@ -76,3 +76,6 @@ def algorithm2(upsilon: list[LinearOrder]):
                 PstarR.append(PstarRK)
         
         r += 1
+
+def bruteForceAlgorithm(upsilon: list[LinearOrder]):
+    pass
