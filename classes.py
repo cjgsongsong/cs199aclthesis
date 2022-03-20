@@ -1,17 +1,17 @@
 import time
 
 INVALID = -1
-Sequence = str
+Sequence = list[int]
 Vertices = list[int]
 Relations = list[tuple[(int, int)]]
-LinearOrders = list[str]
+LinearOrders = list[list[int]]
 
 class Poset():
 
     def __init__(self, relations: Relations):
         # Vertex V with no relations is inputted as (V, -1)
         self.vertices = self._getVertices(relations)
-        self.relations = self._getRelations(relations)
+        self.relations = self._preprocessRelations(relations)
     
     def _getVertices(self, relations: Relations) -> Vertices:
         vertices = []
@@ -24,20 +24,18 @@ class Poset():
         
         return sorted(vertices)
 
-    def _getRelations(self, relations: Relations) -> Relations:
+    def _preprocessRelations(self, relations: Relations) -> Relations:
         for relation in relations:
             if relation[1] == INVALID:
                 relations.pop(relation)
         
         return sorted(relations)
     
-    def transitiveReduce(self) -> None:
-        # transitive reduction
-        pass
+    #def transitiveReduce(self) -> None:
+        #pass
 
-    def generateLinearExtensions(self) -> LinearOrders:
-        # generate linear extensions fast
-        pass
+    #def generateLinearExtensions(self) -> LinearOrders:
+        #pass
 
 class LinearOrder(Poset):
 
