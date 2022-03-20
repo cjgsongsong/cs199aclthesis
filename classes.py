@@ -40,7 +40,7 @@ class Poset():
 class LinearOrder(Poset):
 
     def __init__(self, sequence: Sequence):
-        self.sequence = sequence 
+        self.sequence = sequence
         super().__init__(self._getRelations(sequence))
 
     def _getRelations(self, sequence: Sequence) -> Relations:

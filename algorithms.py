@@ -1,4 +1,5 @@
 from classes import Poset, LinearOrder
+from itertools import chain, combinations
 
 def getComparable():
     pass
@@ -76,6 +77,3 @@ def algorithm2(upsilon: list[LinearOrder]):
                 PstarR.append(PstarRK)
         
         r += 1
-
-def bruteForceAlgorithm(upsilon: list[LinearOrder]):
-    pass

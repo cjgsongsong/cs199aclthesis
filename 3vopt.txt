@@ -1,0 +1,393 @@
+Size = 1
+
+Optimal Solution for input: [1, 2, 3]
+Length of optimal solution: 1
+-----
+[(2, 3), (1, 2), (1, 3)]
+
+Optimal Solution for input: [1, 3, 2]
+Length of optimal solution: 1
+-----
+[(3, 2), (1, 2), (1, 3)]
+
+Optimal Solution for input: [2, 1, 3]
+Length of optimal solution: 1
+-----
+[(2, 3), (1, 3), (2, 1)]
+
+Optimal Solution for input: [2, 3, 1]
+Length of optimal solution: 1
+-----
+[(2, 3), (3, 1), (2, 1)]
+
+Optimal Solution for input: [3, 1, 2]
+Length of optimal solution: 1
+-----
+[(3, 1), (3, 2), (1, 2)]
+
+Optimal Solution for input: [3, 2, 1]
+Length of optimal solution: 1
+-----
+[(3, 1), (3, 2), (2, 1)]
+
+Size = 2
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]
+Length of optimal solution: 1
+-----
+[(1, 2), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]
+Length of optimal solution: 1
+-----
+[(2, 3), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 3, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(2, 3), (3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 1), (3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 1), (3, 2), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 3, 1]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[3, 1, 2]
+Length of optimal solution: 1
+-----
+[(3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(3, 1), (3, 2), (2, 1)]
+
+Optimal Solution for input: [2, 1, 3]-[2, 3, 1]
+Length of optimal solution: 1
+-----
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [2, 1, 3]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (3, 2), (1, 2)]
+
+Optimal Solution for input: [2, 1, 3]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (3, 2), (2, 1)]
+
+Optimal Solution for input: [2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (3, 1), (2, 1)]
+[(3, 1), (3, 2), (1, 2)]
+
+Optimal Solution for input: [2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 1
+-----
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 1
+-----
+[(3, 1), (3, 2)]
+
+Size = 3
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (3, 1), (2, 1)]
+[(1, 2), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(3, 1), (3, 2), (2, 1)]
+[(1, 2), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(3, 1), (3, 2), (1, 2)]
+[(2, 3), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(3, 1), (3, 2), (2, 1)]
+[(2, 3), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(2, 3), (3, 1), (2, 1)]
+[(3, 1), (3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3), (2, 1)]
+[(3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (3, 2), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (3, 1), (2, 1)]
+[(3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [2, 1, 3]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(3, 1), (3, 2), (1, 2)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [2, 1, 3]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [2, 1, 3]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (3, 1), (2, 1)]
+[(3, 1), (3, 2)]
+
+Size = 4
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]
+Length of optimal solution: 2
+-----
+[(1, 2), (1, 3)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3)]
+[(3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(3, 1), (3, 2), (2, 1)]
+[(2, 3), (1, 3)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(2, 3), (3, 1), (2, 1)]
+[(3, 2), (1, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(1, 2), (1, 3)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(1, 2), (1, 3)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 1), (3, 2), (1, 2)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (1, 3)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(2, 3), (3, 1), (2, 1)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3), (2, 1)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(3, 2), (1, 2)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 2
+-----
+[(2, 3), (2, 1)]
+[(3, 1), (3, 2)]
+
+Size = 5
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 2), (1, 2)]
+[(2, 3), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (1, 3)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(3, 2), (1, 2)]
+[(3, 1), (2, 1)]
+
+Optimal Solution for input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(2, 3), (1, 2), (1, 3)]
+[(2, 3), (2, 1)]
+[(3, 1), (3, 2)]
+
+Optimal Solution for input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(3, 2), (1, 2), (1, 3)]
+[(2, 3), (2, 1)]
+[(3, 1), (3, 2)]
+
+Size = 6
+
+Optimal Solution for input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
+Length of optimal solution: 3
+-----
+[(1, 2), (1, 3)]
+[(2, 3), (2, 1)]
+[(3, 1), (3, 2)]
+

@@ -13,7 +13,6 @@ def inputConverter(input):
     for j in x:
         converted = [int(num) for num in j.strip('[]').split(',')]
         perSet.append(converted)
-    print(perSet)
     return perSet
 
 def unionOfPosets(posets):
@@ -41,7 +40,6 @@ def findAllTopologicalOrders(graph, path, marked, N):
     if len(path) == N:
         path = [i+1 for i in path]
         graph.listofLO.append(path.copy())
-        print(path)
 
 def getAllTopologicalOrders(graph):
     lenNodes = len(graph.adjList)
@@ -67,66 +65,139 @@ class Graph:
  
             # increment in-degree of destination vertex by 1
             self.indegree[dst-1] = self.indegree[dst-1] + 1
- 
 
-fileInput = open("4verticestest.txt", "r")
+def reset(counters):
+    for i in range(len(counters)):
+      counters[i] = i  
+
+def indicesProcess(counters, sizeFullSet):
+    lastIndex = sizeFullSet-1
+    cur = len(counters)-1
+    if counters[cur] != lastIndex:
+        counters[cur] += 1
+    else:
+        didreset = False
+        while(counters[cur] == lastIndex):
+            if cur == 0:
+                counters.append(0)
+                reset(counters)
+                didreset = True
+                break
+            lastIndex -=1
+            cur -= 1
+        if not(didreset):
+            counters[cur] += 1
+            for i in range(len(counters)-cur-1):
+                counters[cur+i+1] = counters[cur]+i+1
+        
+fileInput = open("4vertices3p2.txt", "r")
 lines = fileInput.readlines()
 fileInput.close()
-f = open("optimal4vtest.txt", "w")
+f = open("optimal4v3test3.txt", "w")
+kawnt = 1
+numVertices = 4
 for setInput in lines:
     if setInput[0] == "N":
         continue
+    print(kawnt)
+    kawnt += 1
     f.write("Optimal Solution for input: {0}".format(setInput))
     setinput = inputConverter(setInput)
-    powerset = powersetGEN(setinput)
-
+    # powerset = powersetGEN(setinput)
     hasOnePosetCover = []
 
-    for seT in powerset:
-        if seT == []:
-            continue
+    listsub = setinput
+    sizeFullSet = len(listsub)
+    counters = [0]
+    while True:
+        if len(counters) > sizeFullSet:
+            break
+
+        subset = []
+        for i in counters:
+            subset.append(listsub[i])
+
         orderedpairsSet = []
-        for i in seT:
+        for i in subset:
             orderedpairs_per_LO = []
             for j in range(len(i)):
                 for k in range(len(i)-(j+1)):
                     orderedpairs_per_LO.append((i[j] , i[j+k+1]))
             orderedpairsSet.append(set(orderedpairs_per_LO))
-
-        print(set.intersection(*orderedpairsSet))
+        # print(subset)
+        # print(orderedpairsSet)
         edges = list(set.intersection(*orderedpairsSet))
-        graph = Graph(edges, 4, list(tuple(x) for x in seT))
+        if edges == []:
+            indicesProcess(counters, sizeFullSet)
+            continue
+        checkIfVerticesComplete = []
+        for i in edges:
+            checkIfVerticesComplete.append(i[0])
+            checkIfVerticesComplete.append(i[1])
+        checkIfVerticesComplete = list(set(checkIfVerticesComplete))
+        if(len(checkIfVerticesComplete) != numVertices):
+            indicesProcess(counters, sizeFullSet)
+            continue
+        # print(edges)
+        graph = Graph(edges, numVertices, list(tuple(x) for x in subset))
 
         getAllTopologicalOrders(graph)
-        set1 = set(tuple(x) for x in seT)
+        set1 = set(tuple(x) for x in subset)
         set2 = set(tuple(x) for x in graph.listofLO)
-        print(set1, set2)
         if(set1 == set2):
             hasOnePosetCover.append(graph)
 
-    combi = unionOfPosets(hasOnePosetCover)
+        indicesProcess(counters, sizeFullSet)
+
+    listsub = hasOnePosetCover
+    sizeFullSet = len(listsub)
     solutions = []
-    print(powerset)
-    for i in combi:
+    counters = [0]
+    while True:
+        if len(counters) > sizeFullSet:
+            break
+
+        subset = []
+        for i in counters:
+            subset.append(listsub[i])
+
         lst = []
-        for j in i:
+        for j in subset:
             lst.extend(j.listofLO)
         set1 = set(tuple(x) for x in lst)
         set2 = set(tuple(x) for x in setinput)
         if(set1 == set2):
-            solutions.append((i,lst))
+            solutions.append((subset,lst))
+            break
 
-    numOfElements = [len(i) for i,l in solutions]
-    minimum = min(numOfElements)
-    indices = [i for i, v in enumerate(solutions) if len(v[0]) == minimum]
-    print(len(indices))
+        lastIndex = sizeFullSet-1
+        cur = len(counters)-1
+        if counters[cur] != lastIndex:
+            counters[cur] += 1
+        else:
+            didreset = False
+            while(counters[cur] == lastIndex):
+                if cur == 0:
+                    counters.append(0)
+                    reset(counters)
+                    didreset = True
+                    break
+                lastIndex -=1
+                cur -= 1
+            if not(didreset):
+                counters[cur] += 1
+                for i in range(len(counters)-cur-1):
+                    counters[cur+i+1] = counters[cur]+i+1
+
+    print(solutions, len(listsub))
+    minimum = len(solutions[0][0])
     f.write("Length of optimal solution: {0}\n".format(minimum))
-    f.write("Number of optimal solutions: {0}\n".format(len(indices)))
-    for i in indices:
-        print("-------")
-        f.write("-----\n")
-        for j in solutions[i][0]:
-            print(j.edges)
-            f.write(str(j.edges)+'\n')
-        f.write('\n')
+    
+    print("-------")
+    f.write("-----\n")
+    for j in solutions[0][0]:
+        print(j.edges)
+        f.write(str(j.edges)+'\n')
+    f.write('\n')
+
 f.close()
