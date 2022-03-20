@@ -1,3 +1,3 @@
 from classes import Poset, LinearOrder
+from algorithms import algorithm2
 
-# generate test cases, optimal solution pairs here

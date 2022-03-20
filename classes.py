@@ -1,3 +1,5 @@
+import time
+
 INVALID = -1
 Sequence = str
 Vertices = list[int]
@@ -49,3 +51,17 @@ class LinearOrder(Poset):
             relations.append((sequence[idx], sequence[idx + 1]))
         
         return relations
+
+class Timer:
+
+    def __init__(self):
+        self._start_time = None
+    
+    def start(self):
+        self._start_time = time.perf_counter()
+    
+    def stop(self):
+        elapsed_time = time.perf_counter() - self._start_time
+        self._start_time = None
+
+        return elapsed_time
