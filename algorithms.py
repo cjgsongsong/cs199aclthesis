@@ -52,7 +52,7 @@ def combinePoset(poset1: Poset, poset2: Poset):
         return Poset([])
     
     rels3 = subtract(rels1, rels2)
-
+    
     if len(rels3) > 1:
         return Poset([])
     
@@ -66,22 +66,22 @@ def combinePoset(poset1: Poset, poset2: Poset):
 
 def algorithm2(upsilon: list[LinearOrder]):
     PstarRMinusOne = upsilon
-    PCurrentFinal = []
-    PstarR = []
-    r = 1
+    #PCurrentFinal = []
+    #PstarR = []
+    #r = 1
     canBeImproved = True
 
     while canBeImproved:
         canBeImproved = False
-        k = 1
+        #k = 1
         PstarR = []
-        for i in range(0, len(PstarRMinusOne) - 1):
+        for i in range(0, len(PstarRMinusOne)):
             hasPair = False
             for j in range(i + 1, len(PstarRMinusOne)):
                 PstarRK = combinePoset(PstarRMinusOne[i], PstarRMinusOne[j])
                 if len(PstarRK.relations) != 0:
                     PstarR.append(PstarRK)
-                    k += 1
+                    #k += 1
                     hasPair = True
                     canBeImproved = True
             
@@ -89,9 +89,8 @@ def algorithm2(upsilon: list[LinearOrder]):
                 PstarRK = PstarRMinusOne[i]
                 PstarR.append(PstarRK)
 
-        PCurrentFinal = PstarRMinusOne #to check
+        #PCurrentFinal = PstarRMinusOne #to check
         PstarRMinusOne = PstarR
-        
-        r += 1
+        #r += 1
 
-    return PCurrentFinal
+    return PstarR
