@@ -1,10 +1,14 @@
-import fileinput
+import sys, fileinput
 from classes import Timer
 from algorithms import algorithm2
 from utils import preprocess
 
-fileOutput = open("algo2/3valgo2.txt", "w")
-fileInput = open("inputs/3vertices.txt", "r")
+args = sys.argv[1:]
+if len(args) < 3:
+    args.append("")
+
+fileOutput = open(f"{args[0]}/{args[1]}v{args[2]}{args[0]}.txt", "w")
+fileInput = open(f"inputs/{args[1]}vertices{args[2]}.txt", "r")
 inputs = fileInput.readlines()
 fileInput.close()
 
@@ -19,7 +23,8 @@ for input in inputs:
     count += 1
 
     timer.start()
-    solution = algorithm2(preprocess(input))
+    if args[0] == "algo2":
+        solution = algorithm2(preprocess(input))
     fileOutput.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
     fileOutput.write(f"Approximation for input: {preprocess(input, False)}\n")
     fileOutput.write(f"Approximation cost: {len(solution)}\n")
