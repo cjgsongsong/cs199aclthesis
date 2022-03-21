@@ -15,7 +15,7 @@ def preprocess(input, toLO = True):
         
         return inputSet
 
-#fileOutput = open("3valgo2.txt", "w")
+fileOutput = open("3valgo2.txt", "w")
 fileInput = open("3vertices.txt", "r")
 inputs = fileInput.readlines()
 fileInput.close()
@@ -25,6 +25,7 @@ numVertices = 3
 timer = Timer()
 for input in inputs:
     if input[0] == "N":
+        fileOutput.write(f"Size ={input.split(':')[1]}\n")
         continue
 
     print(count)
@@ -32,17 +33,21 @@ for input in inputs:
 
     timer.start()
     solution = algorithm2(preprocess(input))
-    print(f"Time elapsed: {timer.stop():0.6f} seconds")
-    
-    print(f"Approximation for input: {preprocess(input, False)}")
-    print(f"Approximation cost: {len(solution)}")
-    #fileOutput.write(f"Approximation for input: {preprocess(input, False)}")
-    #fileOutput.write(f"Approximation cost: {len(solution)}")
+    #print(f"Time elapsed: {timer.stop():0.8f} seconds")
+    #print(f"Approximation for input: {preprocess(input, False)}")
+    #print(f"Approximation cost: {len(solution)}")
+    fileOutput.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
+    fileOutput.write(f"Approximation for input: {preprocess(input, False)}\n")
+    fileOutput.write(f"Approximation cost: {len(solution)}\n")
 
-    print("-------")
-    #fileOutput.write("-----\n")
+    #print("-------")
+    fileOutput.write("-----\n")
     for poset in solution:
-        print(poset.relations)
-        #fileOutput.write(f"{poset.relations}\n")
-    print('')
-    #fileOutput.write("\n")
+        #print(poset.relations)
+        fileOutput.write(f"{poset.relations}\n")
+    #print('')
+    fileOutput.write("\n")
+
+fileOutput.close()
+
+print("FINISH")

@@ -30,7 +30,15 @@ class Poset():
                 relations.pop(relation)
         
         return sorted(relations)
-    
+
+    def subtract(self, poset: "Poset") -> "Poset":
+        relations = []
+        for relation in self.relations:
+            if relation not in poset.relations:
+                relations.append(relation)
+
+        return Poset(relations)
+
     #def transitiveReduce(self) -> None:
         #pass
 

@@ -36,24 +36,11 @@ def algorithm1(upsilon: list[LinearOrder]):
         k += 1
         upsilonOne -= lmbda # set difference
 
-def naiveListSubtract(list1, list2):
-    # to improve this
-    diff = []
-    for item in list1:
-        if item not in list2:
-            diff.append(item)
-    
-    #for item in list2:
-    #    if item not in list1:
-    #        diff.append(item)
-    
-    return diff
-
 def combinePoset(poset1: Poset, poset2: Poset):
     if len(poset1.relations) != len(poset2.relations):
         return Poset([])
     
-    poset = Poset(naiveListSubtract(poset1.relations, poset2.relations))
+    poset = poset1.subtract(poset2)
     # to check if this correct
 
     if len(poset.relations) > 1:
@@ -76,7 +63,7 @@ def algorithm2(upsilon: list[LinearOrder]):
         canBeImproved = False
         k = 1
 
-        for i in range(1, len(PstarRMinusOne)):
+        for i in range(0, len(PstarRMinusOne)):
             hasPair = False
             for j in range(i, len(PstarRMinusOne)):
                 PstarRK = combinePoset(PstarRMinusOne[i], PstarRMinusOne[j])
