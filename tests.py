@@ -1,5 +1,5 @@
 import fileinput
-from classes import Poset, LinearOrder, Timer
+from classes import LinearOrder, Timer
 from algorithms import algorithm2
 
 def preprocess(input, toLO = True):
@@ -15,8 +15,8 @@ def preprocess(input, toLO = True):
         
         return inputSet
 
-fileOutput = open("3valgo2.txt", "w")
-fileInput = open("3vertices.txt", "r")
+fileOutput = open("algo2/3valgo2.txt", "w")
+fileInput = open("inputs/3vertices.txt", "r")
 inputs = fileInput.readlines()
 fileInput.close()
 
