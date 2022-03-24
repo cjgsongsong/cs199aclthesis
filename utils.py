@@ -36,6 +36,8 @@ def extract(keyword, data_raw):
         ref_idx = 0
     
     data['input'] = _get_value(data_raw[ref_idx])
+    data['input_size'] = data['input'].count('-') + 1
+    data['vertex_count'] = data['input'].split('-')[0].count(',') + 1
     data[f'cost_{keyword}'] = int(_get_value(data_raw[ref_idx + 1]))
     data[f'output_{keyword}'] = [preprocess(datum, False) for datum
                                   in data_raw[ref_idx + 3:len(data_raw)]]
