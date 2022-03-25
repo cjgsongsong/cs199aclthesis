@@ -1,4 +1,12 @@
+import fileinput
 from classes import LinearOrder
+
+def read(filepath):
+    fileInput = open(filepath, "r")
+    inputs = fileInput.readlines()
+    fileInput.close()
+
+    return inputs
 
 def preprocess(input, toLO = True):
     input = input.strip('\n')

@@ -1,23 +1,22 @@
-import csv, fileinput
-from utils import preprocess, split, extract
+import csv
+from utils import read, preprocess, split, extract
 
 #verifier here
 
-#fileInput = open(f"inputs/{args[1]}vertices{args[2]}.txt", "r")
-#inputs = fileInput.readlines()
-#fileInput.close()
+keywords = ['algo2', 'optsol']
 
-fileInput = open("algo2/3valgo2.txt", "r")
-inputs = fileInput.readlines()
-fileInput.close()
+for keyword in keywords:
+    inputs = read(f"{keyword}/3v{keyword}.txt")
+    for splice in range(1, 5):
+        inputs += read(f"{keyword}/4v{splice}{keyword}.txt")
 
-algo2 = []
-for input in split(inputs):
-    if len(input) != 1:
-        algo2.append(extract('algo2', input))
+    dictlist = []
+    for input in split(inputs):
+        if len(input) != 1:
+            dictlist.append(extract(keyword, input))
 
-keys = algo2[0].keys()
-with open('results/algo2.csv', 'w', newline='') as fileOutput:
-    dw = csv.DictWriter(fileOutput, keys)
-    dw.writeheader()
-    dw.writerows(algo2)
+    keys = dictlist[0].keys()
+    with open(f'results/{keyword}.csv', 'w', newline='') as fileOutput:
+        dw = csv.DictWriter(fileOutput, keys)
+        dw.writeheader()
+        dw.writerows(dictlist)
