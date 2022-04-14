@@ -1,6 +1,67 @@
 from classes import Poset, LinearOrder
 from itertools import chain, combinations
 
+def hasSwapPair(l1, l2):
+    for i in range(len(l1)-1):
+        if l1[i] == l2[i+1] and l1[i+1] == l2[i]:
+            return True
+        elif l1[i] == l2[i-1] and l1[i-1] == l2[i]:
+            return True
+    return False
+
+
+def components(upsilonTwo):
+    # les = [] 
+    # for i in upsilonTwo:
+    #     les.append(i.sequence) 
+ 
+    # comp = [[les[0]]]
+    # les.pop(0)
+    # index = 0
+    # while les != []:
+    #     added = False
+    #     for i in comp:
+    #         for j in i:
+    #             if hasSwapPair(les[index], j):
+    #                 i.append(les[index])
+    #                 les.pop(index)
+    #                 added = True
+    #                 index = 0
+    #                 break
+    #         if added:
+    #             break
+    #     if not added:
+    #         index += 1
+    #         if len(les) <= index:
+    #             comp.append([les[0]])
+    #             les.pop(0)
+    #             index = 0
+
+    upsilon2 = upsilonTwo.copy()   
+    compfin = [[upsilon2[0]]]
+    upsilon2.pop(0)
+    index =0
+    while upsilon2 != []:
+        added = False
+        for i in range(len(compfin)):
+            for j in compfin[i]:
+                if hasSwapPair(upsilon2[index].sequence, j.sequence):
+                    compfin[i].append(upsilon2[index])
+                    upsilon2.pop(index)
+                    added = True
+                    index = 0
+                    break
+            if added:
+                break
+        if not added:
+            index += 1
+            if len(upsilon2) <= index:
+                compfin.append([upsilon2[0]])
+                upsilon2.pop(0)
+                index = 0
+
+    return compfin
+
 def swapByPair(el, pair):
     l = el.sequence
     indexA = l.index(pair[0])
@@ -38,6 +99,12 @@ def swapPair(ellone, elltwo):
     else:
         return (-1,-1) #means ellone and elltwo don't have "swap pair"
 
+def findLOswap(l, upsilonTwo):
+    for i in range(1, len(upsilonTwo)):
+        if swapPair(l,upsilonTwo[i]) != (-1,-1):
+            return i
+    return -1
+
 def getComparable(A, upsilonTwo, el, n):
     upsilon2 = [] #will be used for "not in" conditional
     for i in upsilonTwo:
@@ -50,8 +117,9 @@ def getComparable(A, upsilonTwo, el, n):
     
     tempUpsilon = upsilonTwo.copy()
     for i in tempUpsilon:
-        if all(x in i.relations for x in A):
+        if not all(x in i.relations for x in A):
             upsilonTwo.remove(i)
+    return A, upsilonTwo
 
 def getIncomparable(B, upsilonTwo, ellone, elltwo):
     (a,b) = swapPair(ellone, elltwo)
@@ -69,35 +137,46 @@ def getIncomparable(B, upsilonTwo, ellone, elltwo):
             if l4 not in upsilon2:
                 upsilonTwo.remove(l3)
                 upsilon2.remove(l3.sequence)
+    return B, upsilonTwo
+
+def setDiff(upsilonOne, lmbda):
+    counter = 0
+    while len(lmbda) > counter:
+        for i in upsilonOne:
+            if lmbda[counter].sequence == i.sequence:
+                upsilonOne.remove(i)
+                counter += 1
+                break
+    return upsilonOne
 
 def algorithm1(upsilon: list[LinearOrder], n):
     Pstar = []
-    k = 1
     upsilonOne = upsilon.copy()
 
     while upsilonOne != []:
         # select L in upsilonOne
         ell = upsilonOne[0]
-        ellOne = upsilonOne[0]
-        ellTwo = upsilonOne[1]
 
-        upsilonTwo = upsilon.copy() # set of linear orders in connected component of G(Y') that contains L
+        con_comp = components(upsilonOne.copy())
+        upsilonTwo = con_comp[0] # set of linear orders in connected component of G(Y') that contains L
         A = []
         B = []
         lmbda =  [ell]
-        (A, upsilonTwo) = getComparable(A, upsilonTwo, ellTwo, n)
+        A, upsilonTwo = getComparable(A, upsilonTwo, ell, n)
 
         while upsilonTwo != lmbda:
-            # select ellOne in lmbda and ellTwo in upsilonTwo
-            # such that ellOne <- ellTwo
+            ellOne = lmbda[0]
+            l2index = findLOswap(ellOne, upsilonTwo)
+            ellTwo = upsilonTwo[l2index]
             lmbda.append(ellTwo)
-            (A, upsilonTwo) = getComparable(A, upsilonTwo, ell)
-            (B, upsilonTwo) = getIncomparable(B, upsilonTwo, ellOne, ellTwo)
+            A, upsilonTwo = getComparable(A, upsilonTwo, ell, n)
+            B, upsilonTwo = getIncomparable(B, upsilonTwo, ellOne, ellTwo)
         
-        PstarK = [] # (V, <_Pk) where <_Pk is transitive closure of A 
+        PstarK = Poset(A)
         Pstar.append(PstarK)
-        k += 1
-        upsilonOne -= lmbda # set difference
+        upsilonOne = setDiff(upsilonOne, lmbda)
+
+    return Pstar
 
 def combinePoset(poset1: Poset, poset2: Poset):
     if len(poset1.relations) != len(poset2.relations):

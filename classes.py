@@ -59,6 +59,23 @@ class LinearOrder(Poset):
         
         return relations
 
+class Graph:
+    def __init__(self, edges, N, inputs):
+        self.inputLO = inputs
+        self.listofLO = [] 
+        self.edges = edges
+        self.adjList = [[] for _ in range(N)]
+
+        # initialize in-degree of each vertex by 0
+        self.indegree = [0] * N
+        # add edges to the undirected graph
+        for (src, dst) in edges:
+            # add an edge from source to destination
+            self.adjList[src-1].append(dst-1)
+ 
+            # increment in-degree of destination vertex by 1
+            self.indegree[dst-1] = self.indegree[dst-1] + 1
+
 class Timer:
 
     def __init__(self):

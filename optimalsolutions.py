@@ -47,7 +47,6 @@ def getAllTopologicalOrders(graph):
     path = []
     findAllTopologicalOrders(graph, path, marked, lenNodes)
 
-
 class Graph:
     def __init__(self, edges, N, inputs):
         self.inputLO = inputs
