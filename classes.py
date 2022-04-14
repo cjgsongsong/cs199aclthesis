@@ -66,7 +66,6 @@ class Graph:
         self.edges = edges
         self.adjList = [[] for _ in range(N)]
 
-        # initialize in-degree of each vertex by 0
         self.indegree = [0] * N
         # add edges to the undirected graph
         for (src, dst) in edges:

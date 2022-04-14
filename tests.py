@@ -7,14 +7,14 @@ args = sys.argv[1:]
 if len(args) < 3:
     args.append("")
 
-inputs = read(f"inputs/{args[1]}vertices{args[2]}.txt")
-fileOutput = open(f"{args[0]}/{args[1]}v{args[2]}{args[0]}.txt", "w")
+inputs = read(f"inputs/{args[1]}vertices.txt")
+output = open(f"{args[0]}/{args[1]}v{args[0]}.txt", "w")
 
 count = 1
 timer = Timer()
 for input in inputs:
     if input[0] == "N":
-        fileOutput.write(f"Size ={input.split(':')[1]}\n")
+        output.write(f"Size ={input.split(':')[1]}\n")
         continue
 
     print(count)
@@ -25,15 +25,15 @@ for input in inputs:
         solution = algorithm1(preprocess(input))
     elif args[0] == "algo2":
         solution = algorithm2(preprocess(input))
-    fileOutput.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
-    fileOutput.write(f"Approximation for input: {preprocess(input, False)}\n")
-    fileOutput.write(f"Approximation cost: {len(solution)}\n")
+    output.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
+    output.write(f"Approximation for input: {preprocess(input, False)}\n")
+    output.write(f"Approximation cost: {len(solution)}\n")
 
-    fileOutput.write("-----\n")
+    output.write("-----\n")
     for poset in solution:
-        fileOutput.write(f"{poset.relations}\n")
-    fileOutput.write("\n")
+        output.write(f"{poset.relations}\n")
+    output.write("\n")
 
-fileOutput.close()
+output.close()
 
 print("FINISH")

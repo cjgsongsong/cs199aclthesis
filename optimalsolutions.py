@@ -1,4 +1,5 @@
-import fileinput
+import sys, fileinput
+from classes import Graph, Timer
 from itertools import chain, combinations
 
 def powersetGEN(setOflinearorders):
@@ -47,24 +48,6 @@ def getAllTopologicalOrders(graph):
     path = []
     findAllTopologicalOrders(graph, path, marked, lenNodes)
 
-class Graph:
-    def __init__(self, edges, N, inputs):
-        self.inputLO = inputs
-        self.listofLO = [] 
-        self.edges = edges
-        #adjacency list
-        self.adjList = [[] for _ in range(N)]
-
-        # initialize in-degree of each vertex by 0
-        self.indegree = [0] * N
-        # add edges to the undirected graph
-        for (src, dst) in edges:
-            # add an edge from source to destination
-            self.adjList[src-1].append(dst-1)
- 
-            # increment in-degree of destination vertex by 1
-            self.indegree[dst-1] = self.indegree[dst-1] + 1
-
 def reset(counters):
     for i in range(len(counters)):
       counters[i] = i  
@@ -88,21 +71,26 @@ def indicesProcess(counters, sizeFullSet):
             counters[cur] += 1
             for i in range(len(counters)-cur-1):
                 counters[cur+i+1] = counters[cur]+i+1
-        
-fileInput = open("4vertices3p2.txt", "r")
-lines = fileInput.readlines()
-fileInput.close()
-f = open("optimal4v3test3.txt", "w")
-kawnt = 1
-numVertices = 4
+
+v = int(sys.argv[1])        
+input = open(f"inputs/{v}vertices.txt", "r")
+lines = input.readlines()
+input.close()
+
+count = 1
+timer = Timer()
+output = open(f"optsol/{v}voptsol.txt", "w")
 for setInput in lines:
     if setInput[0] == "N":
+        output.write(f"Size = {setInput.split(':')[1][1:]}\n")
         continue
-    print(kawnt)
-    kawnt += 1
-    f.write("Optimal Solution for input: {0}".format(setInput))
+    
+    print(count)
+    count += 1
+    
+    timer.start()
+    output.write(f"Optimal Solution for input: {setInput}")
     setinput = inputConverter(setInput)
-    # powerset = powersetGEN(setinput)
     hasOnePosetCover = []
 
     listsub = setinput
@@ -123,8 +111,7 @@ for setInput in lines:
                 for k in range(len(i)-(j+1)):
                     orderedpairs_per_LO.append((i[j] , i[j+k+1]))
             orderedpairsSet.append(set(orderedpairs_per_LO))
-        # print(subset)
-        # print(orderedpairsSet)
+        
         edges = list(set.intersection(*orderedpairsSet))
         if edges == []:
             indicesProcess(counters, sizeFullSet)
@@ -134,11 +121,11 @@ for setInput in lines:
             checkIfVerticesComplete.append(i[0])
             checkIfVerticesComplete.append(i[1])
         checkIfVerticesComplete = list(set(checkIfVerticesComplete))
-        if(len(checkIfVerticesComplete) != numVertices):
+        if(len(checkIfVerticesComplete) != v):
             indicesProcess(counters, sizeFullSet)
             continue
-        # print(edges)
-        graph = Graph(edges, numVertices, list(tuple(x) for x in subset))
+        
+        graph = Graph(edges, v, list(tuple(x) for x in subset))
 
         getAllTopologicalOrders(graph)
         set1 = set(tuple(x) for x in subset)
@@ -188,15 +175,11 @@ for setInput in lines:
                 for i in range(len(counters)-cur-1):
                     counters[cur+i+1] = counters[cur]+i+1
 
-    print(solutions, len(listsub))
-    minimum = len(solutions[0][0])
-    f.write("Length of optimal solution: {0}\n".format(minimum))
-    
-    print("-------")
-    f.write("-----\n")
+    output.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
+    output.write(f"Length of optimal solution: {len(solutions[0][0])}\n")
+    output.write("-----\n")
     for j in solutions[0][0]:
-        print(j.edges)
-        f.write(str(j.edges)+'\n')
-    f.write('\n')
+        output.write(str(j.edges)+'\n')
+    output.write('\n')
 
-f.close()
+output.close()
