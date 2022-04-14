@@ -89,7 +89,6 @@ for setInput in lines:
     count += 1
     
     timer.start()
-    output.write(f"Optimal Solution for input: {setInput}")
     setinput = inputConverter(setInput)
     hasOnePosetCover = []
 
@@ -176,10 +175,13 @@ for setInput in lines:
                     counters[cur+i+1] = counters[cur]+i+1
 
     output.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
-    output.write(f"Length of optimal solution: {len(solutions[0][0])}\n")
+    output.write(f"Input: {setInput}")
+    output.write(f"Optimal solution cost: {len(solutions[0][0])}\n")
     output.write("-----\n")
     for j in solutions[0][0]:
         output.write(str(j.edges)+'\n')
     output.write('\n')
 
 output.close()
+
+print("FINISH")

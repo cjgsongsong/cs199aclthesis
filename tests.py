@@ -26,7 +26,7 @@ for input in inputs:
     elif args[0] == "algo2":
         solution = algorithm2(preprocess(input))
     output.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
-    output.write(f"Approximation for input: {preprocess(input, False)}\n")
+    output.write(f"Input: {preprocess(input, False)}\n")
     output.write(f"Approximation cost: {len(solution)}\n")
 
     output.write("-----\n")

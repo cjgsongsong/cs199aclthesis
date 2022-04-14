@@ -1,14 +1,15 @@
-import csv
+import csv, sys
 from utils import read, split, extract
 
 #verifier here
 
 keywords = ['algo2', 'optsol']
 
+vmax = int(sys.argv[1])
 for keyword in keywords:
-    inputs = read(f"{keyword}/3v{keyword}.txt")
-    for splice in range(1, 5):
-        inputs += read(f"{keyword}/4v{splice}{keyword}.txt")
+    inputs = []
+    for v in range(3, vmax + 1):
+        inputs += read(f"{keyword}/{v}v{keyword}.txt")
 
     dictlist = []
     for input in split(inputs):
