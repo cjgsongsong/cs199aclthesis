@@ -8,12 +8,16 @@ def read(filepath):
 
     return inputs
 
-def preprocess(input, toLO = True):
+def remove(string, chars):
+    for char in chars:
+        string = string.replace(char, '')
+        
+    return string
+
+def preprocess(input, toLO = True, toPoset = False):
     input = input.strip('\n')
     
-    if not toLO:
-        return input
-    else:
+    if toLO:
         inputSet = []
         for lo_raw in input.split('-'):
             lo = [int(num) for num
@@ -21,6 +25,15 @@ def preprocess(input, toLO = True):
             inputSet.append(LinearOrder(lo))
         
         return inputSet
+    elif toPoset:
+        inputRels = []
+        for rel in input.split('(')[1:]:
+            a, b = rel.split(',')[:2]
+            inputRels.append((int(a), int(remove(b, ' ),]'))))
+        
+        return inputRels
+    else:
+        return input
 
 def split(txt):
     data = []
@@ -42,7 +55,21 @@ def extract(keyword, data_raw, ref_idx = 1):
     data['vertex_count'] = data['input'].split('-')[0].count(',') + 1
     data[f'cost_{keyword}'] = int(_get_value(data_raw[ref_idx + 1]))
     data[f'output_{keyword}'] = [preprocess(datum, False) for datum
-                                  in data_raw[ref_idx + 3:len(data_raw)]]
+                                 in data_raw[ref_idx + 3:len(data_raw)]]
     data[f'runtime_{keyword}'] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
     
     return data
+
+def verify(input, output):
+    upsilon = preprocess(input)
+    
+    #for lo in upsilon:
+    #    print(lo.relations)
+
+    posets = []
+    for rels in output:
+        posets.append(Poset(preprocess(rels, False, True)))
+
+    #print(posets)
+
+    return True
