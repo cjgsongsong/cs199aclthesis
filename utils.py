@@ -70,6 +70,9 @@ def verify(input, output):
     for rels in output:
         posets.append(Poset(preprocess(rels, False, True)))
 
+    #for poset in posets:
+    #    poset.generateLinearExtensions()
+
     #print(posets)
 
     return True

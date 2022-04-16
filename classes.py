@@ -1,4 +1,4 @@
-import time
+import time, itertools
 
 INVALID = -1
 Sequence = list[int]
@@ -42,8 +42,21 @@ class Poset():
     #def transitiveReduce(self) -> None:
         #pass
 
-    #def generateLinearExtensions(self) -> LinearOrders:
-        #pass
+    def generateLinearExtensions(self) -> list[LinearOrders]:
+        groups = self.relations
+        groupdxs = [i for i, group in enumerate(groups) for j in range(len(group))]
+        old_combo = ()
+        print("---")
+        for dx_combo in itertools.permutations(groupdxs):
+            print(dx_combo)
+            if dx_combo <= old_combo:
+                continue
+
+            old_combo = dx_combo
+            iters = [iter(group) for group in groups]
+            print([next(iters[i])] for i in dx_combo)
+
+        return [] 
 
 class LinearOrder(Poset):
 
@@ -60,6 +73,7 @@ class LinearOrder(Poset):
         return relations
 
 class Graph:
+
     def __init__(self, edges, N, inputs):
         self.inputLO = inputs
         self.listofLO = [] 
@@ -74,6 +88,31 @@ class Graph:
  
             # increment in-degree of destination vertex by 1
             self.indegree[dst-1] = self.indegree[dst-1] + 1
+    
+    def _findAllTopologicalOrders(self, path, marked, N):
+        for v in range(N):
+            if self.indegree[v] == 0 and not marked[v]:
+                for u in self.adjList[v]:
+                    self.indegree[u] = self.indegree[u] - 1
+                path.append(v)
+                marked[v] = True
+                self._findAllTopologicalOrders(path, marked, N)
+    
+                for u in self.adjList[v]:
+                    self.indegree[u] = self.indegree[u] + 1
+    
+                path.pop()
+                marked[v] = False
+    
+        if len(path) == N:
+            path = [i+1 for i in path]
+            self.listofLO.append(path.copy())
+
+    def getAllTopologicalOrders(self):
+        lenNodes = len(self.adjList)
+        marked = [False] * lenNodes
+        path = []
+        self._findAllTopologicalOrders(path, marked, lenNodes)
 
 class Timer:
 

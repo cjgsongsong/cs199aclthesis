@@ -23,31 +23,6 @@ def unionOfPosets(posets):
         lst.append(combination)
     return list(chain.from_iterable(lst))
 
-def findAllTopologicalOrders(graph, path, marked, N):
-    for v in range(N):
-        if graph.indegree[v] == 0 and not marked[v]:
-            for u in graph.adjList[v]:
-                graph.indegree[u] = graph.indegree[u] - 1
-            path.append(v)
-            marked[v] = True
-            findAllTopologicalOrders(graph, path, marked, N)
- 
-            for u in graph.adjList[v]:
-                graph.indegree[u] = graph.indegree[u] + 1
- 
-            path.pop()
-            marked[v] = False
- 
-    if len(path) == N:
-        path = [i+1 for i in path]
-        graph.listofLO.append(path.copy())
-
-def getAllTopologicalOrders(graph):
-    lenNodes = len(graph.adjList)
-    marked = [False] * lenNodes
-    path = []
-    findAllTopologicalOrders(graph, path, marked, lenNodes)
-
 def reset(counters):
     for i in range(len(counters)):
       counters[i] = i  
@@ -126,7 +101,7 @@ for setInput in lines:
         
         graph = Graph(edges, v, list(tuple(x) for x in subset))
 
-        getAllTopologicalOrders(graph)
+        graph.getAllTopologicalOrders()
         set1 = set(tuple(x) for x in subset)
         set2 = set(tuple(x) for x in graph.listofLO)
         if(set1 == set2):
