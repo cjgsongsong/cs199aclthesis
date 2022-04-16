@@ -48,31 +48,30 @@ def split(txt):
 def _get_value(entry):
     return entry.strip('\n').split(':')[1][1:]
 
+def verify(input, output):
+    upsilon = [lo.sequence for lo in preprocess(input)]
+    
+    ell = []
+    for rels in output:
+        poset = Poset(preprocess(rels, False, True))
+        for le in poset.generateLinearExtensions():
+            if le not in ell:
+                ell.append(le)
+    
+    return sorted(upsilon) == sorted(ell)
+
 def extract(keyword, data_raw, ref_idx = 1):
     data = {}
+    
     data['input'] = _get_value(data_raw[ref_idx])
     data['input_size'] = data['input'].count('-') + 1
     data['vertex_count'] = data['input'].split('-')[0].count(',') + 1
+
     data[f'cost_{keyword}'] = int(_get_value(data_raw[ref_idx + 1]))
     data[f'output_{keyword}'] = [preprocess(datum, False) for datum
                                  in data_raw[ref_idx + 3:len(data_raw)]]
+    
+    data[f'is_valid_sol'] = verify(data['input'], data[f'output_{keyword}'])
     data[f'runtime_{keyword}'] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
-    
+
     return data
-
-def verify(input, output):
-    upsilon = preprocess(input)
-    
-    #for lo in upsilon:
-    #    print(lo.relations)
-
-    posets = []
-    for rels in output:
-        posets.append(Poset(preprocess(rels, False, True)))
-
-    #for poset in posets:
-    #    poset.generateLinearExtensions()
-
-    #print(posets)
-
-    return True

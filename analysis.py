@@ -1,7 +1,5 @@
 import csv, sys
-from utils import read, split, extract, verify
-
-#verifier here
+from utils import read, split, extract
 
 keywords = ['algo2', 'optsol']
 
@@ -14,7 +12,6 @@ for keyword in keywords:
     dictlist = []
     for input in split(inputs):
         if len(input) != 1:
-            #verify(input)
             dictlist.append(extract(keyword, input))
 
     keys = dictlist[0].keys()

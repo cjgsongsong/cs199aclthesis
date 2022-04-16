@@ -1,4 +1,4 @@
-import time, itertools
+import time
 
 INVALID = -1
 Sequence = list[int]
@@ -43,20 +43,10 @@ class Poset():
         #pass
 
     def generateLinearExtensions(self) -> list[LinearOrders]:
-        groups = self.relations
-        groupdxs = [i for i, group in enumerate(groups) for j in range(len(group))]
-        old_combo = ()
-        print("---")
-        for dx_combo in itertools.permutations(groupdxs):
-            print(dx_combo)
-            if dx_combo <= old_combo:
-                continue
-
-            old_combo = dx_combo
-            iters = [iter(group) for group in groups]
-            print([next(iters[i])] for i in dx_combo)
-
-        return [] 
+        graph = Graph(self.relations, len(self.vertices), [])
+        graph.getAllTopologicalOrders()
+        
+        return graph.listofLO
 
 class LinearOrder(Poset):
 
