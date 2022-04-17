@@ -154,8 +154,8 @@ for setInput in lines:
     output.write(f"Optimal solution cost: {len(solutions[0][0])}\n")
     output.write("-----\n")
     for j in solutions[0][0]:
-        output.write(str(j.edges)+'\n')
-    output.write('\n')
+        output.write(str(j.edges)+"\n")
+    output.write("\n")
 
 output.close()
 

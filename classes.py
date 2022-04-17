@@ -39,9 +39,6 @@ class Poset():
 
         return relations
 
-    #def transitiveReduce(self) -> None:
-        #pass
-
     def generateLinearExtensions(self) -> list[LinearOrders]:
         graph = Graph(self.relations, len(self.vertices), [])
         graph.getAllTopologicalOrders()
