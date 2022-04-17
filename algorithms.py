@@ -192,7 +192,7 @@ def combinePoset(poset1: Poset, poset2: Poset):
         if (b, a) not in poset2.relations:
             return Poset([])
         
-        relations = [relation for relation in poset1.relations if relation not in relations]
+        relations = [relation for relation in poset1.relations if relation != (a, b)]
         return Poset(relations)
 
 def algorithm2(upsilon: list[LinearOrder]):
@@ -204,9 +204,9 @@ def algorithm2(upsilon: list[LinearOrder]):
     while canBeImproved:
         canBeImproved = False
         PstarR = []
-        for i in range(0, len(PstarRMinusOne) - 1):
+        for i in range(0, len(PstarRMinusOne)):
             hasPair = False
-            for j in range(i + 1, len(PstarRMinusOne)):
+            for j in range(i, len(PstarRMinusOne)):
                 PstarRK = combinePoset(PstarRMinusOne[i], PstarRMinusOne[j])
                 if len(PstarRK.relations) != 0: 
                     PstarR.append(PstarRK)
