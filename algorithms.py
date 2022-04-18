@@ -221,3 +221,9 @@ def algorithm2(upsilon: list[LinearOrder]):
         PstarRMinusOne = PstarR
     
     return PCurrentFinal
+
+def algorithm1v2(upsilon: list[LinearOrder]):
+    pass
+
+def algorithm2v2(upsilon: list[LinearOrder]):
+    pass
