@@ -4,9 +4,6 @@ from algorithms import algorithm1, algorithm2
 from utils import read, preprocess
 
 args = sys.argv[1:]
-if len(args) < 3:
-    args.append("")
-
 inputs = read(f"inputs/{args[1]}vertices.txt")
 output = open(f"{args[0]}/{args[1]}v{args[0]}.txt", "w")
 

@@ -1,36 +1,30 @@
 Size = 1
 
-Time elapsed: 0.00009640 seconds
 Input: [1, 2, 3]
 Optimal solution cost: 1
 -----
 [(2, 3), (1, 2), (1, 3)]
 
-Time elapsed: 0.00006280 seconds
 Input: [1, 3, 2]
 Optimal solution cost: 1
 -----
 [(3, 2), (1, 2), (1, 3)]
 
-Time elapsed: 0.00005450 seconds
 Input: [2, 1, 3]
 Optimal solution cost: 1
 -----
 [(2, 3), (1, 3), (2, 1)]
 
-Time elapsed: 0.00004560 seconds
 Input: [2, 3, 1]
 Optimal solution cost: 1
 -----
 [(2, 3), (3, 1), (2, 1)]
 
-Time elapsed: 0.00008260 seconds
 Input: [3, 1, 2]
 Optimal solution cost: 1
 -----
 [(3, 1), (3, 2), (1, 2)]
 
-Time elapsed: 0.00008270 seconds
 Input: [3, 2, 1]
 Optimal solution cost: 1
 -----
@@ -38,100 +32,85 @@ Optimal solution cost: 1
 
 Size = 2
 
-Time elapsed: 0.00015490 seconds
 Input: [1, 2, 3]-[1, 3, 2]
 Optimal solution cost: 1
 -----
 [(1, 2), (1, 3)]
 
-Time elapsed: 0.00010020 seconds
 Input: [1, 2, 3]-[2, 1, 3]
 Optimal solution cost: 1
 -----
 [(2, 3), (1, 3)]
 
-Time elapsed: 0.00013320 seconds
 Input: [1, 2, 3]-[2, 3, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(2, 3), (3, 1), (2, 1)]
 
-Time elapsed: 0.00011950 seconds
 Input: [1, 2, 3]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(3, 1), (3, 2), (1, 2)]
 
-Time elapsed: 0.00013400 seconds
 Input: [1, 2, 3]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(3, 1), (3, 2), (2, 1)]
 
-Time elapsed: 0.00011570 seconds
 Input: [1, 3, 2]-[2, 1, 3]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(2, 3), (1, 3), (2, 1)]
 
-Time elapsed: 0.00011340 seconds
 Input: [1, 3, 2]-[2, 3, 1]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(2, 3), (3, 1), (2, 1)]
 
-Time elapsed: 0.00016720 seconds
 Input: [1, 3, 2]-[3, 1, 2]
 Optimal solution cost: 1
 -----
 [(3, 2), (1, 2)]
 
-Time elapsed: 0.00009080 seconds
 Input: [1, 3, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(3, 1), (3, 2), (2, 1)]
 
-Time elapsed: 0.00018100 seconds
 Input: [2, 1, 3]-[2, 3, 1]
 Optimal solution cost: 1
 -----
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00012020 seconds
 Input: [2, 1, 3]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (3, 2), (1, 2)]
 
-Time elapsed: 0.00011400 seconds
 Input: [2, 1, 3]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (3, 2), (2, 1)]
 
-Time elapsed: 0.00011910 seconds
 Input: [2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (3, 1), (2, 1)]
 [(3, 1), (3, 2), (1, 2)]
 
-Time elapsed: 0.00011750 seconds
 Input: [2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 1
 -----
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00013920 seconds
 Input: [3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 1
 -----
@@ -139,56 +118,48 @@ Optimal solution cost: 1
 
 Size = 3
 
-Time elapsed: 0.00025050 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(2, 3), (1, 3)]
 
-Time elapsed: 0.00014880 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (3, 1), (2, 1)]
 [(1, 2), (1, 3)]
 
-Time elapsed: 0.00018410 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(3, 2), (1, 2)]
 
-Time elapsed: 0.00019120 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(3, 1), (3, 2), (2, 1)]
 [(1, 2), (1, 3)]
 
-Time elapsed: 0.00027520 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00028580 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(3, 1), (3, 2), (1, 2)]
 [(2, 3), (1, 3)]
 
-Time elapsed: 0.00033200 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(3, 1), (3, 2), (2, 1)]
 [(2, 3), (1, 3)]
 
-Time elapsed: 0.00013440 seconds
 Input: [1, 2, 3]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 3
 -----
@@ -196,35 +167,30 @@ Optimal solution cost: 3
 [(2, 3), (3, 1), (2, 1)]
 [(3, 1), (3, 2), (1, 2)]
 
-Time elapsed: 0.00025200 seconds
 Input: [1, 2, 3]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00012100 seconds
 Input: [1, 2, 3]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 2), (1, 3)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00018780 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00014840 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3), (2, 1)]
 [(3, 2), (1, 2)]
 
-Time elapsed: 0.00011490 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -232,49 +198,42 @@ Optimal solution cost: 3
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (3, 2), (2, 1)]
 
-Time elapsed: 0.00017660 seconds
 Input: [1, 3, 2]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (3, 1), (2, 1)]
 [(3, 2), (1, 2)]
 
-Time elapsed: 0.00016710 seconds
 Input: [1, 3, 2]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00017360 seconds
 Input: [1, 3, 2]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2), (1, 3)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00017700 seconds
 Input: [2, 1, 3]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(3, 1), (3, 2), (1, 2)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00029240 seconds
 Input: [2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00014650 seconds
 Input: [2, 1, 3]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00017850 seconds
 Input: [2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
@@ -283,21 +242,18 @@ Optimal solution cost: 2
 
 Size = 4
 
-Time elapsed: 0.00028620 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]
 Optimal solution cost: 2
 -----
 [(1, 2), (1, 3)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00027410 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3)]
 [(3, 2), (1, 2)]
 
-Time elapsed: 0.00028530 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -305,7 +261,6 @@ Optimal solution cost: 3
 [(3, 1), (3, 2), (2, 1)]
 [(2, 3), (1, 3)]
 
-Time elapsed: 0.00040020 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 3
 -----
@@ -313,21 +268,18 @@ Optimal solution cost: 3
 [(2, 3), (3, 1), (2, 1)]
 [(3, 2), (1, 2)]
 
-Time elapsed: 0.00031780 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(1, 2), (1, 3)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00028970 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(1, 2), (1, 3)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00026330 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 3
 -----
@@ -335,21 +287,18 @@ Optimal solution cost: 3
 [(3, 1), (3, 2), (1, 2)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00041540 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00023890 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(2, 3), (1, 3)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00024850 seconds
 Input: [1, 2, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -357,14 +306,12 @@ Optimal solution cost: 3
 [(2, 3), (3, 1), (2, 1)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00023590 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00022510 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -372,7 +319,6 @@ Optimal solution cost: 3
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00024190 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -380,14 +326,12 @@ Optimal solution cost: 3
 [(2, 3), (1, 3), (2, 1)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00028040 seconds
 Input: [1, 3, 2]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
 [(3, 2), (1, 2)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00027700 seconds
 Input: [2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 2
 -----
@@ -396,7 +340,6 @@ Optimal solution cost: 2
 
 Size = 5
 
-Time elapsed: 0.00164820 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
 Optimal solution cost: 3
 -----
@@ -404,7 +347,6 @@ Optimal solution cost: 3
 [(3, 2), (1, 2)]
 [(2, 3), (2, 1)]
 
-Time elapsed: 0.00079620 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -412,7 +354,6 @@ Optimal solution cost: 3
 [(2, 3), (1, 3)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00111630 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -420,7 +361,6 @@ Optimal solution cost: 3
 [(2, 3), (1, 3)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00054690 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -428,7 +368,6 @@ Optimal solution cost: 3
 [(3, 2), (1, 2)]
 [(3, 1), (2, 1)]
 
-Time elapsed: 0.00052660 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -436,7 +375,6 @@ Optimal solution cost: 3
 [(2, 3), (2, 1)]
 [(3, 1), (3, 2)]
 
-Time elapsed: 0.00054540 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----
@@ -446,7 +384,6 @@ Optimal solution cost: 3
 
 Size = 6
 
-Time elapsed: 0.00138840 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Optimal solution cost: 3
 -----

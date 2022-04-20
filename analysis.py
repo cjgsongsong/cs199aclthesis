@@ -15,10 +15,10 @@ for keyword in keywords:
         if len(input) != 1:
             d = extract(keyword, input)
             if verify(d["input"], d[f"output_{keyword}"]):
-                dictlist.append(extract(keyword, input))
+                dictlist.append(d)
             else:
                 isAllCorrect = False
-                print("Incorrect solution detected!")
+                print(f"Incorrect solution detected from {keyword}!")
                 print(d["input"])
                 print(d[f"output_{keyword}"])
                 break
