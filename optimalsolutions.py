@@ -87,20 +87,7 @@ for setInput in lines:
             orderedpairsSet.append(set(orderedpairs_per_LO))
         
         edges = list(set.intersection(*orderedpairsSet))
-        if edges == []:
-            indicesProcess(counters, sizeFullSet)
-            continue
-        checkIfVerticesComplete = []
-        for i in edges:
-            checkIfVerticesComplete.append(i[0])
-            checkIfVerticesComplete.append(i[1])
-        checkIfVerticesComplete = list(set(checkIfVerticesComplete))
-        if(len(checkIfVerticesComplete) != v):
-            indicesProcess(counters, sizeFullSet)
-            continue
-        
         graph = Graph(edges, v, list(tuple(x) for x in subset))
-
         graph.getAllTopologicalOrders()
         set1 = set(tuple(x) for x in subset)
         set2 = set(tuple(x) for x in graph.listofLO)
