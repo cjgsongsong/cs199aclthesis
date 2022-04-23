@@ -122,9 +122,10 @@ def setDiff(upsilonOne, lmbda):
                 break
     return upsilonOne
 
-def algorithm1(upsilon: list[LinearOrder], n):
+def algorithm1(upsilon: list[LinearOrder]):
     Pstar = []
     upsilonOne = upsilon.copy()
+    n = len(upsilon[0].vertices)
 
     while upsilonOne != []:
         # select L in upsilonOne
@@ -158,6 +159,13 @@ def algorithm1(upsilon: list[LinearOrder], n):
         
         PstarK = Poset(A)
         Pstar.append(PstarK)
+        print('ooooooooooooooooo')
+        for i in upsilonOne:
+            print(i.sequence)
+        print('.................')
+        for i in lmbda:
+            print(i.sequence)
+        lmbda = list(set(lmbda))
         upsilonOne = setDiff(upsilonOne, lmbda)
 
     return Pstar
