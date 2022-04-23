@@ -140,14 +140,6 @@ def algorithm1(upsilon: list[LinearOrder]):
         A, upsilonTwo = getComparable(A, upsilonTwo, ell, n)
         
         while upsilonTwo != lmbda:
-            print("==========================")
-            for i in upsilonTwo:
-                print(i.sequence)
-            print("----------------------------")            
-            for i in lmbda:
-                print(i.sequence)
-            print("==========================")
-
             ellOne = lmbda[0]
             l2index = findLOswap(ellOne, upsilonTwo, lmbda)
             ellTwo = upsilonTwo[l2index]
@@ -159,12 +151,6 @@ def algorithm1(upsilon: list[LinearOrder]):
         
         PstarK = Poset(A)
         Pstar.append(PstarK)
-        print('ooooooooooooooooo')
-        for i in upsilonOne:
-            print(i.sequence)
-        print('.................')
-        for i in lmbda:
-            print(i.sequence)
         lmbda = list(set(lmbda))
         upsilonOne = setDiff(upsilonOne, lmbda)
 

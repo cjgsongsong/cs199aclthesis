@@ -84,13 +84,13 @@ class Graph:
                 path.append(v)
                 marked[v] = True
                 self._findAllTopologicalOrders(path, marked, N)
-    
+
                 for u in self.adjList[v]:
                     self.indegree[u] = self.indegree[u] + 1
-    
+
                 path.pop()
                 marked[v] = False
-    
+
         if len(path) == N:
             path = [i+1 for i in path]
             self.listofLO.append(path.copy())
