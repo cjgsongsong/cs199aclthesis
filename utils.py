@@ -48,19 +48,6 @@ def split(txt):
 def _get_value(entry):
     return entry.strip("\n").split(":")[1][1:]
 
-def verify(input, output):
-    upsilon = [lo.sequence for lo in preprocess(input)]
-    
-    ell = []
-    size = len(upsilon[0])
-    for rels in output:
-        poset = Poset(size, preprocess(rels, False, True))
-        for le in poset.generateLinearExtensions():
-            if le not in ell:
-                ell.append(le)
-    
-    return sorted(upsilon) == sorted(ell)
-
 def extract(keyword, data_raw, ref_idx = 1):
     data = {}
     
@@ -73,3 +60,29 @@ def extract(keyword, data_raw, ref_idx = 1):
     data[f"runtime_{keyword}"] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
 
     return data
+
+def getLinearOrders(input):
+    return sorted([lo.sequence for lo in preprocess(input)])
+
+def getLinearExtensions(size, output):
+    ell = []
+    for rels in output:
+        poset = Poset(size, preprocess(rels, False, True))
+        for le in poset.generateLinearExtensions():
+            if le not in ell:
+                ell.append(le)
+    
+    return sorted(ell)
+
+def verify(input, output, shouldLog = False):
+    upsilon = getLinearOrders(input)
+    ell = getLinearExtensions(len(upsilon[0]), output)
+    
+    if shouldLog:
+        print(input)
+        print(output)
+        print("-----")
+        print(upsilon)
+        print(ell)
+
+    return upsilon == ell

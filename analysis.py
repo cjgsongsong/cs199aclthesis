@@ -1,5 +1,5 @@
 import csv, sys
-from utils import read, split, extract, verify
+from utils import read, split, extract, verify, getLinearOrders, getLinearExtensions
 
 keywords = ["algo1", "algo2", "optsol"]
 
@@ -19,8 +19,7 @@ for keyword in keywords:
             else:
                 isAllCorrect = False
                 print(f"Incorrect solution detected from {keyword}!")
-                print(d["input"])
-                print(d[f"output_{keyword}"])
+                verify(d["input"], d[f"output_{keyword}"], True)
                 break
 
     if isAllCorrect:
