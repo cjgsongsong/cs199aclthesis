@@ -8,28 +8,9 @@ LinearOrders = list[list[int]]
 
 class Poset():
 
-    def __init__(self, relations: Relations):
-        # Vertex V with no relations is inputted as (V, -1)
-        self.relations = self._preprocessRelations(relations)
-        self.vertices = self._getVertices(self.relations)
-    
-    def _getVertices(self, relations: Relations) -> Vertices:
-        vertices = []
-        for relation in relations:
-            if relation[0] not in vertices:
-                vertices.append(relation[0])
-
-            if relation[1] not in vertices:
-                vertices.append(relation[1]) 
-        
-        return sorted(vertices)
-
-    def _preprocessRelations(self, relations: Relations) -> Relations:
-        for relation in relations:
-            if relation[1] == INVALID:
-                relations.pop(relation)
-        
-        return sorted(relations)
+    def __init__(self, size: int, relations: Relations, isNull = False):
+        self.vertices = None if isNull else [i for i in range(1, size + 1)]
+        self.relations = None if isNull else sorted(relations)
 
     def subtract(self, poset: "Poset") -> Relations:
         relations = []
@@ -49,7 +30,7 @@ class LinearOrder(Poset):
 
     def __init__(self, sequence: Sequence):
         self.sequence = sequence
-        super().__init__(self._getRelations(sequence))
+        super().__init__(len(sequence), self._getRelations(sequence))
 
     def _getRelations(self, sequence: Sequence) -> Relations:
         relations = []

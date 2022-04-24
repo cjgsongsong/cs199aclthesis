@@ -52,8 +52,9 @@ def verify(input, output):
     upsilon = [lo.sequence for lo in preprocess(input)]
     
     ell = []
+    size = len(upsilon[0])
     for rels in output:
-        poset = Poset(preprocess(rels, False, True))
+        poset = Poset(size, preprocess(rels, False, True))
         for le in poset.generateLinearExtensions():
             if le not in ell:
                 ell.append(le)

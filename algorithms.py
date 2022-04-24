@@ -44,7 +44,7 @@ def swapByPair(el, pair):
     l[indexB] = temp
     return l
 
-def swapbyIndex(el, i):
+def swapByIndex(el, i):
     l = el.sequence.copy()
     temp = l[i]
     l[i] = l[i+1]
@@ -70,12 +70,22 @@ def swapPair(ellone, elltwo):
     else:
         return (-1,-1) # no valid swap pair
 
-def findLOswap(l, upsilonTwo, lmbda):
+def findLOSwap(l, upsilonTwo, lmbda):
     for i in range(1, len(upsilonTwo)):
         (a,b) = swapPair(l,upsilonTwo[i])
         if (a,b) != (-1,-1) and upsilonTwo[i] not in lmbda:
             return i
     return -1
+
+def setDiff(upsilonOne, lmbda):
+    counter = 0
+    while len(lmbda) > counter:
+        for i in upsilonOne:
+            if lmbda[counter].sequence == i.sequence:
+                upsilonOne.remove(i)
+                counter += 1
+                break
+    return upsilonOne
 
 def getComparable(A, upsilonTwo, el, n):
     upsilon2 = [] # will be used for "not in" conditional
@@ -83,7 +93,7 @@ def getComparable(A, upsilonTwo, el, n):
         upsilon2.append(i.sequence)
     
     for i in range(n-1):
-        Lprime = swapbyIndex(el, i)
+        Lprime = swapByIndex(el, i)
         if Lprime not in upsilon2:
             A.append((el.sequence[i], el.sequence[i+1]))
     
@@ -112,16 +122,6 @@ def getIncomparable(B, upsilonTwo, ellone, elltwo):
                 upsilon2.remove(l3.sequence)
     return B, upsilonTwo
 
-def setDiff(upsilonOne, lmbda):
-    counter = 0
-    while len(lmbda) > counter:
-        for i in upsilonOne:
-            if lmbda[counter].sequence == i.sequence:
-                upsilonOne.remove(i)
-                counter += 1
-                break
-    return upsilonOne
-
 def algorithm1(upsilon: list[LinearOrder]):
     Pstar = []
     upsilonOne = upsilon.copy()
@@ -141,7 +141,7 @@ def algorithm1(upsilon: list[LinearOrder]):
         
         while upsilonTwo != lmbda:
             ellOne = lmbda[0]
-            l2index = findLOswap(ellOne, upsilonTwo, lmbda)
+            l2index = findLOSwap(ellOne, upsilonTwo, lmbda)
             ellTwo = upsilonTwo[l2index]
             lmbda.append(ellTwo)
             A, upsilonTwo = getComparable(A, upsilonTwo, ellTwo, n)
@@ -149,7 +149,7 @@ def algorithm1(upsilon: list[LinearOrder]):
                 break
             B, upsilonTwo = getIncomparable(B, upsilonTwo, ellOne, ellTwo)
         
-        PstarK = Poset(A)
+        PstarK = Poset(n, A)
         Pstar.append(PstarK)
         lmbda = list(set(lmbda))
         upsilonOne = setDiff(upsilonOne, lmbda)
@@ -158,20 +158,21 @@ def algorithm1(upsilon: list[LinearOrder]):
 
 def combinePoset(poset1: Poset, poset2: Poset):
     if len(poset1.relations) != len(poset2.relations):
-        return Poset([])
+        return Poset(-1, [], True)
     
     relations = poset1.subtract(poset2)
 
     if len(relations) != 1:
-        return Poset([])
+        return Poset(-1, [], True)
     
     if len(relations) == 1:
         (a, b) = relations[0]
         if (b, a) not in poset2.relations:
-            return Poset([])
+            return Poset(-1, [], True)
         
+        size = len(poset1.vertices)
         relations = [relation for relation in poset1.relations if relation != (a, b)]
-        return Poset(relations)
+        return Poset(size, relations)
 
 def algorithm2(upsilon: list[LinearOrder]):
     PstarR = []
@@ -186,7 +187,7 @@ def algorithm2(upsilon: list[LinearOrder]):
             hasPair = False
             for j in range(i, len(PstarRMinusOne)):
                 PstarRK = combinePoset(PstarRMinusOne[i], PstarRMinusOne[j])
-                if len(PstarRK.relations) != 0: 
+                if PstarRK.relations != None: 
                     PstarR.append(PstarRK)
                     hasPair = True
                     canBeImproved = True

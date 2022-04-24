@@ -1,7 +1,7 @@
 import csv, sys
 from utils import read, split, extract, verify
 
-keywords = ["algo2", "optsol"]
+keywords = ["algo1", "algo2", "optsol"]
 
 vmax = int(sys.argv[1])
 for keyword in keywords:
