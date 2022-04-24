@@ -57,7 +57,8 @@ def extract(keyword, data_raw, ref_idx = 1):
     data[f"output_{keyword}"] = [preprocess(datum, False) for datum
                                  in data_raw[ref_idx + 3:len(data_raw)]]
     
-    data[f"runtime_{keyword}"] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
+    if ref_idx == 1:
+        data[f"runtime_{keyword}"] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
 
     return data
 
