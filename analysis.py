@@ -1,5 +1,5 @@
 import csv, sys
-from utils import read, split, extract, verify, getLinearOrders, getLinearExtensions
+from utils import read, split, extract, verify
 
 keywords = ["algo1", "algo2", "optsol"]
 
