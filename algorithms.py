@@ -57,21 +57,21 @@ def swapPair(ellone, elltwo):
     l2 = elltwo.sequence.copy()
     notSamePos = 0
     (a,b) = (-1,-1)
+    hasPair = False
     for i in range(len(l1)-1):
         if l1[i] == l2[i+1] and l1[i+1] == l2[i]:
             notSamePos += 1
             (a,b) = (l1[i], l1[i+1])
-        elif l1[i] == l2[i-1] and l1[i-1] == l2[i]:
-            notSamePos += 1
+            hasPair = True
         elif l1[i] != l2[i]:
             notSamePos += 1
-    if notSamePos == 2:
+    if notSamePos == 1 and hasPair:
         return (a,b)
     else:
         return (-1,-1) # no valid swap pair
 
 def findLOSwap(l, upsilonTwo, lmbda):
-    for i in range(1, len(upsilonTwo)):
+    for i in range(len(upsilonTwo)):
         (a,b) = swapPair(l,upsilonTwo[i])
         if (a,b) != (-1,-1) and upsilonTwo[i] not in lmbda:
             return i
@@ -141,7 +141,16 @@ def algorithm1(upsilon: list[LinearOrder]):
         
         while upsilonTwo != lmbda:
             ellOne = lmbda[0]
-            l2index = findLOSwap(ellOne, upsilonTwo, lmbda)
+            
+            l2index = -1
+            for i in range(len(lmbda)):
+                ellOne = lmbda[i]
+                l2index = findLOSwap(ellOne, upsilonTwo, lmbda)
+                if l2index != -1:
+                    break
+            if l2index == -1:
+                break
+
             ellTwo = upsilonTwo[l2index]
             lmbda.append(ellTwo)
             A, upsilonTwo = getComparable(A, upsilonTwo, ellTwo, n)
