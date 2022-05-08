@@ -12,6 +12,25 @@ class Poset():
         self.vertices = None if isNull else [i for i in range(1, size + 1)]
         self.relations = None if isNull else sorted(relations)
 
+    def isEmpty(self, keyword = "both"):
+        if keyword in ['both', 'vertices'] and self.vertices == None: return True
+        if keyword in ['both', 'relations'] and self.relations == None: return True
+
+        return False
+
+    def isEqual(self, poset: "Poset") -> bool:
+        if ((not self.isEmpty()) and 
+            max(self.vertices) == max(poset.vertices) and
+            sorted(self.relations) == sorted(poset.relations)): return True
+        
+        return False
+
+    def isIn(self, posets: list["Poset"]) -> bool:
+        for poset in posets:
+            if self.isEqual(poset): return True
+        
+        return False
+
     def subtract(self, poset: "Poset") -> Relations:
         relations = []
         for relation in self.relations:
