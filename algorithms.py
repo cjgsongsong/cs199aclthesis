@@ -63,6 +63,8 @@ def swapPair(ellone, elltwo):
             notSamePos += 1
             (a,b) = (l1[i], l1[i+1])
             hasPair = True
+        elif l1[i] == l2[i-1] and l1[i-1] == l2[i]:
+            continue
         elif l1[i] != l2[i]:
             notSamePos += 1
     if notSamePos == 1 and hasPair:

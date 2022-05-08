@@ -4,8 +4,13 @@ from algorithms import algorithm1, algorithm2
 from utils import read, preprocess
 
 args = sys.argv[1:]
-inputs = read(f"inputs/{args[1]}vertices.txt")
-output = open(f"{args[0]}/{args[1]}v{args[0]}.txt", "w")
+if len(args) == 2:
+    inputs = read(f"inputs/{args[1]}vertices.txt")
+    output = open(f"{args[0]}/{args[1]}v{args[0]}.txt", "w")
+else:
+    inputs = read(f"inputs/{args[2]}/{args[1]}{args[2]}.txt")
+    output = open(f"{args[0]}/{args[2]}/{args[1]}v{args[0]}.txt", "w")
+
 
 count = 1
 timer = Timer()
