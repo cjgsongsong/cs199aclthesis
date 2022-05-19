@@ -14,6 +14,27 @@ def isAllConnected(vertices, relations):
     
     return True
 
+def generateHammockRelations(parent, vertices, relations, isHammockLevel):
+    # TO-DO: fix this
+    if len(vertices) == 1:
+        return [relations]
+    else:
+        rels = []
+        for child in vertices:
+            newVertices = [v for v in vertices if v != child]
+            newRelations = relations + [(parent, child)]
+            if isHammockLevel:
+                rels.extend(generateHammockRelations(child, newVertices, relations, True))
+                rels.extend(generateHammockRelations(child, newVertices, newRelations, False))
+            else:
+                rels1 = generateHammockRelations(child, newVertices, newRelations, True)
+                rels2 = generateHammockRelations(child, newVertices, newRelations, False)
+                rels.extend(rels1)
+                if rels1 != rels2:
+                    rels.extend(rels2)
+        
+        return rels
+
 def generateRootedRelations(parent, vertices, relations):
     if len(vertices) == 0:
         return [relations]
@@ -30,26 +51,7 @@ def generateRootedRelations(parent, vertices, relations):
 args = sys.argv[1:]
 args[1] = int(args[1])
 
-if args[0] == 'tree':
-    vertices = [v for v in range(1, args[1] + 1)]
-    rels = []
-    for root in vertices:
-        newVertices = [v for v in vertices if v != root]
-        rootedRels = generateRootedRelations(root, newVertices, [])
-        for rel in rootedRels:
-            if isAllConnected(vertices, rel) and rel not in rels: 
-                rels.append(rel)
-
-    lst = [Poset(args[1], relations).generateLinearExtensions() for
-           relations in rels]
-    output = open(f"inputs/trees/{args[1]}trees.txt", "w")
-    for i in lst:
-        output.write(("-".join(str(j) for j in i))+"\n")
-    output.close()
-
-    print(f"Generated all linear order sets of trees with {args[1]} vertices")
-
-else:
+if args[0] == 'all':
     lo = [list(p) for p in permutations(range(1, (args[1] + 1)))]
     output = open(f"inputs/{args[1]}vertices.txt", "w")
     for i in range(len(lo)):
@@ -60,3 +62,28 @@ else:
     output.close()
 
     print(f"Generated all linear order sets with {args[1]} vertices")
+else:
+    vertices = [v for v in range(1, args[1] + 1)]
+    rels = []
+    for root in vertices:
+        newVertices = [v for v in vertices if v != root]
+        
+        if args[0] == 'trees':
+            rootedRels = generateRootedRelations(root, newVertices, [])
+        elif args[0] == 'hammocks':
+            rootedRels = generateHammockRelations(root, newVertices, [], False)
+        
+        for rel in rootedRels:
+            print(rel)
+            print(isAllConnected(vertices, rel))
+            if isAllConnected(vertices, rel) and rel not in rels: 
+                rels.append(rel)
+
+    lst = [Poset(args[1], relations).generateLinearExtensions() for
+           relations in rels]
+    output = open(f"inputs/{args[0]}/{args[1]}{args[0]}.txt", "w")
+    for i in lst:
+        output.write(("-".join(str(j) for j in i))+"\n")
+    output.close()
+
+    print(f"Generated all linear order sets of {args[0]} with {args[1]} vertices")
