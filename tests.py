@@ -1,7 +1,8 @@
 import sys
+from itertools import permutations
 from classes import Timer
 from algorithms import algorithm1, algorithm2
-from utils import read, preprocess
+from utils import read, preprocess, verify
 
 args = sys.argv[1:]
 if len(args) == 2:
@@ -21,6 +22,15 @@ for input in inputs:
     print(count)
     count += 1
 
+    if args[0] == "algo1" and input.count('-') != 0:
+        pass
+        #print(input)
+        #for permutation in list(permutations(preprocess(input))):
+        #    solution = [poset.relations for poset in algorithm1(permutation)]
+        #    if verify(preprocess(permutation, False), solution):
+        #        input = permutation
+        #        break
+
     timer.start()
     if args[0] == "algo1":
         solution = algorithm1(preprocess(input))
@@ -29,7 +39,6 @@ for input in inputs:
     output.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
     output.write(f"Input: {preprocess(input, False)}\n")
     output.write(f"Approximation cost: {len(solution)}\n")
-
     output.write("-----\n")
     for poset in solution:
         output.write(f"{poset.relations}\n")

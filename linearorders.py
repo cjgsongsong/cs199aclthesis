@@ -15,38 +15,43 @@ def isAllConnected(vertices, relations):
     return True
 
 def generateHammockRelations(parent, vertices, relations, isHammockLevel):
-    # TO-DO: fix this
+    # TO-DO: fix
     if len(vertices) == 1:
-        return [relations]
+        return [sorted(relations)]
     else:
         rels = []
         for child in vertices:
             newVertices = [v for v in vertices if v != child]
             newRelations = relations + [(parent, child)]
             if isHammockLevel:
-                rels.extend(generateHammockRelations(child, newVertices, relations, True))
+                rels.extend(generateHammockRelations(parent, newVertices, newRelations, True))
                 rels.extend(generateHammockRelations(child, newVertices, newRelations, False))
             else:
-                rels1 = generateHammockRelations(child, newVertices, newRelations, True)
-                rels2 = generateHammockRelations(child, newVertices, newRelations, False)
-                rels.extend(rels1)
-                if rels1 != rels2:
-                    rels.extend(rels2)
+                rels.extend(generateHammockRelations(child, newVertices, newRelations, True))
+                rels.extend(generateHammockRelations(child, newVertices, newRelations, False))
         
+        truerels = []
+        for rel in rels:
+            if rel not in truerels: truerels.append(rel)
+
         return rels
 
 def generateRootedRelations(parent, vertices, relations):
     if len(vertices) == 0:
-        return [relations]
+        return [sorted(relations)]
     else:
         rels = []
         for child in vertices:
             newVertices = [v for v in vertices if v != child]
             newRelations = relations + [(parent, child)]
-            rels.extend(generateRootedRelations(child, newVertices, relations))
+            rels.extend(generateRootedRelations(parent, newVertices, newRelations))
             rels.extend(generateRootedRelations(child, newVertices, newRelations))
         
-        return rels
+        truerels = []
+        for rel in rels:
+            if rel not in truerels: truerels.append(rel)
+
+        return truerels
 
 args = sys.argv[1:]
 args[1] = int(args[1])
@@ -74,8 +79,6 @@ else:
             rootedRels = generateHammockRelations(root, newVertices, [], False)
         
         for rel in rootedRels:
-            print(rel)
-            print(isAllConnected(vertices, rel))
             if isAllConnected(vertices, rel) and rel not in rels: 
                 rels.append(rel)
 

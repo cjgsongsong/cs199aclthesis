@@ -32,7 +32,7 @@ python analysis.py <vertex count*> <type**>
 | ------- | ----------- |
 | `all` | generates all linear order sets with `vertex count` vertices |
 | `trees` | generates all linear order sets of trees with `vertex count` vertices |
-| `hammocks ` | generates all linear order sets of hammocks with `vertex count` vertices |
+| `hammocks ` | generates all linear order sets of hammock posets with `vertex count` vertices |
 
 | algorithm | description |
 | --------- | ----------- |
