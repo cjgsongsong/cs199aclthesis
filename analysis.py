@@ -20,13 +20,13 @@ for keyword in keywords:
     for input in split(inputs):
         if len(input) != 1:
             d = extract(keyword, input)
-            if verify(d["input"], d[f"output_{keyword}"]):
-                dictlist.append(d)
-            else:
-                isAllCorrect = False
-                print(f"Incorrect solution detected from {keyword}!")
-                verify(d["input"], d[f"output_{keyword}"], True)
-                break
+            #if verify(d["input"], d[f"output_{keyword}"]):
+            dictlist.append(d)
+            #else:
+            #    isAllCorrect = False
+            #    print(f"Incorrect solution detected from {keyword}!")
+            #    verify(d["input"], d[f"output_{keyword}"], True)
+            #    break
 
     if isAllCorrect:
         keys = dictlist[0].keys()
