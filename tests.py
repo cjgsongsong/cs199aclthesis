@@ -11,7 +11,6 @@ else:
     inputs = read(f"inputs/{args[2]}/{args[1]}{args[2]}.txt")
     output = open(f"{args[0]}/{args[2]}/{args[1]}v{args[0]}.txt", "w")
 
-
 count = 1
 timer = Timer()
 for input in inputs:
