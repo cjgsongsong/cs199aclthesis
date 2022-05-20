@@ -43,9 +43,10 @@ def generateRootedRelations(parent, vertices, relations):
         rels = []
         for child in vertices:
             newVertices = [v for v in vertices if v != child]
-            newRelations = relations + [(parent, child)]
-            rels.extend(generateRootedRelations(parent, newVertices, newRelations))
-            rels.extend(generateRootedRelations(child, newVertices, newRelations))
+            rels.extend(generateRootedRelations(parent, newVertices, relations + [(parent, child)]))
+            rels.extend(generateRootedRelations(parent, newVertices, relations + [(child, parent)]))
+            rels.extend(generateRootedRelations(child, newVertices, relations + [(parent, child)]))
+            rels.extend(generateRootedRelations(child, newVertices, relations + [(child, parent)]))
         
         truerels = []
         for rel in rels:

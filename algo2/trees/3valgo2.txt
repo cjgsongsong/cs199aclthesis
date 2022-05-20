@@ -1,57 +1,78 @@
-Time elapsed: 0.00012040 seconds
+Time elapsed: 0.00018940 seconds
 Input: [1, 2, 3]-[1, 3, 2]
 Approximation cost: 2
 -----
 [(1, 2), (1, 3)]
 [(1, 2), (1, 3), (3, 2)]
 
-Time elapsed: 0.00005550 seconds
+Time elapsed: 0.00004080 seconds
+Input: [3, 1, 2]
+Approximation cost: 1
+-----
+[(1, 2), (3, 1), (3, 2)]
+
+Time elapsed: 0.00004880 seconds
+Input: [2, 1, 3]
+Approximation cost: 1
+-----
+[(1, 3), (2, 1), (2, 3)]
+
+Time elapsed: 0.00010560 seconds
+Input: [2, 3, 1]-[3, 2, 1]
+Approximation cost: 2
+-----
+[(2, 1), (3, 1)]
+[(2, 1), (3, 1), (3, 2)]
+
+Time elapsed: 0.00005080 seconds
 Input: [1, 2, 3]
 Approximation cost: 1
 -----
 [(1, 2), (1, 3), (2, 3)]
 
-Time elapsed: 0.00004440 seconds
-Input: [1, 3, 2]
-Approximation cost: 1
+Time elapsed: 0.00007560 seconds
+Input: [1, 3, 2]-[3, 1, 2]
+Approximation cost: 2
 -----
-[(1, 2), (1, 3), (3, 2)]
+[(1, 2), (3, 2)]
+[(1, 2), (3, 1), (3, 2)]
 
-Time elapsed: 0.00011240 seconds
+Time elapsed: 0.00011280 seconds
 Input: [2, 1, 3]-[2, 3, 1]
 Approximation cost: 2
 -----
 [(2, 1), (2, 3)]
 [(2, 1), (2, 3), (3, 1)]
 
-Time elapsed: 0.00004250 seconds
-Input: [2, 1, 3]
+Time elapsed: 0.00004850 seconds
+Input: [3, 2, 1]
 Approximation cost: 1
 -----
+[(2, 1), (3, 1), (3, 2)]
+
+Time elapsed: 0.00004340 seconds
+Input: [1, 3, 2]
+Approximation cost: 1
+-----
+[(1, 2), (1, 3), (3, 2)]
+
+Time elapsed: 0.00010940 seconds
+Input: [1, 2, 3]-[2, 1, 3]
+Approximation cost: 2
+-----
+[(1, 3), (2, 3)]
 [(1, 3), (2, 1), (2, 3)]
 
-Time elapsed: 0.00008040 seconds
-Input: [2, 3, 1]
-Approximation cost: 1
------
-[(2, 1), (2, 3), (3, 1)]
-
-Time elapsed: 0.00009980 seconds
+Time elapsed: 0.00012550 seconds
 Input: [3, 1, 2]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(3, 1), (3, 2)]
 [(2, 1), (3, 1), (3, 2)]
 
-Time elapsed: 0.00004220 seconds
-Input: [3, 1, 2]
+Time elapsed: 0.00005190 seconds
+Input: [2, 3, 1]
 Approximation cost: 1
 -----
-[(1, 2), (3, 1), (3, 2)]
-
-Time elapsed: 0.00004330 seconds
-Input: [3, 2, 1]
-Approximation cost: 1
------
-[(2, 1), (3, 1), (3, 2)]
+[(2, 1), (2, 3), (3, 1)]
 
