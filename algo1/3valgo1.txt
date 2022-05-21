@@ -1,36 +1,36 @@
 Size = 1
 
-Time elapsed: 0.00006361 seconds
+Time elapsed: 0.00009360 seconds
 Input: [1, 2, 3]
 Approximation cost: 1
 -----
 [(1, 2), (2, 3)]
 
-Time elapsed: 0.00002486 seconds
+Time elapsed: 0.00004810 seconds
 Input: [1, 3, 2]
 Approximation cost: 1
 -----
 [(1, 3), (3, 2)]
 
-Time elapsed: 0.00001903 seconds
+Time elapsed: 0.00004520 seconds
 Input: [2, 1, 3]
 Approximation cost: 1
 -----
 [(1, 3), (2, 1)]
 
-Time elapsed: 0.00001692 seconds
+Time elapsed: 0.00004530 seconds
 Input: [2, 3, 1]
 Approximation cost: 1
 -----
 [(2, 3), (3, 1)]
 
-Time elapsed: 0.00001626 seconds
+Time elapsed: 0.00004680 seconds
 Input: [3, 1, 2]
 Approximation cost: 1
 -----
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00001539 seconds
+Time elapsed: 0.00007290 seconds
 Input: [3, 2, 1]
 Approximation cost: 1
 -----
@@ -38,157 +38,162 @@ Approximation cost: 1
 
 Size = 2
 
-Time elapsed: 0.00004828 seconds
+Time elapsed: 0.00007870 seconds
 Input: [1, 2, 3]-[1, 3, 2]
-Approximation cost: 1
+Approximation cost: 2
 -----
-[(1, 2), (1, 3)]
+[(1, 2), (2, 3)]
+[(1, 3), (3, 2)]
 
-Time elapsed: 0.00004133 seconds
+Time elapsed: 0.00010400 seconds
 Input: [1, 2, 3]-[2, 1, 3]
 Approximation cost: 1
 -----
 [(1, 3), (2, 3)]
 
-Time elapsed: 0.00004434 seconds
+Time elapsed: 0.00007580 seconds
 Input: [1, 2, 3]-[2, 3, 1]
 Approximation cost: 2
 -----
 [(1, 2), (2, 3)]
 [(2, 3), (3, 1)]
 
-Time elapsed: 0.00003352 seconds
+Time elapsed: 0.00009090 seconds
 Input: [1, 2, 3]-[3, 1, 2]
 Approximation cost: 2
 -----
 [(1, 2), (2, 3)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00003412 seconds
+Time elapsed: 0.00009990 seconds
 Input: [1, 2, 3]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(1, 2), (2, 3)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00003185 seconds
+Time elapsed: 0.00012000 seconds
 Input: [1, 3, 2]-[2, 1, 3]
 Approximation cost: 2
 -----
 [(1, 3), (3, 2)]
 [(1, 3), (2, 1)]
 
-Time elapsed: 0.00003266 seconds
+Time elapsed: 0.00013430 seconds
 Input: [1, 3, 2]-[2, 3, 1]
 Approximation cost: 2
 -----
 [(1, 3), (3, 2)]
 [(2, 3), (3, 1)]
 
-Time elapsed: 0.00004037 seconds
+Time elapsed: 0.00008910 seconds
 Input: [1, 3, 2]-[3, 1, 2]
 Approximation cost: 1
 -----
 [(1, 2), (3, 2)]
 
-Time elapsed: 0.00003098 seconds
+Time elapsed: 0.00014090 seconds
 Input: [1, 3, 2]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(1, 3), (3, 2)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00003885 seconds
+Time elapsed: 0.00012400 seconds
 Input: [2, 1, 3]-[2, 3, 1]
-Approximation cost: 1
+Approximation cost: 2
 -----
-[(2, 1), (2, 3)]
+[(1, 3), (2, 1)]
+[(2, 3), (3, 1)]
 
-Time elapsed: 0.00003413 seconds
+Time elapsed: 0.00012070 seconds
 Input: [2, 1, 3]-[3, 1, 2]
 Approximation cost: 2
 -----
 [(1, 3), (2, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00003066 seconds
+Time elapsed: 0.00009690 seconds
 Input: [2, 1, 3]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(1, 3), (2, 1)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00003030 seconds
+Time elapsed: 0.00012170 seconds
 Input: [2, 3, 1]-[3, 1, 2]
 Approximation cost: 2
 -----
 [(2, 3), (3, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00003783 seconds
+Time elapsed: 0.00010680 seconds
 Input: [2, 3, 1]-[3, 2, 1]
 Approximation cost: 1
 -----
 [(2, 1), (3, 1)]
 
-Time elapsed: 0.00003791 seconds
+Time elapsed: 0.00008100 seconds
 Input: [3, 1, 2]-[3, 2, 1]
-Approximation cost: 1
+Approximation cost: 2
 -----
-[(3, 1), (3, 2)]
+[(1, 2), (3, 1)]
+[(2, 1), (3, 2)]
 
 Size = 3
 
-Time elapsed: 0.00005454 seconds
+Time elapsed: 0.00016870 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]
 Approximation cost: 2
 -----
-[(1, 3)]
-[(1, 3), (2, 1)]
+[(1, 3), (2, 3)]
+[(1, 3), (3, 2)]
 
-Time elapsed: 0.00005550 seconds
+Time elapsed: 0.00012620 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(1, 2), (1, 3)]
+[(1, 2), (2, 3)]
+[(1, 3), (3, 2)]
 [(2, 3), (3, 1)]
 
-Time elapsed: 0.00005568 seconds
+Time elapsed: 0.00012410 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[3, 1, 2]
 Approximation cost: 2
 -----
-[(1, 2)]
-[(1, 2), (3, 1)]
+[(1, 2), (2, 3)]
+[(1, 2), (3, 2)]
 
-Time elapsed: 0.00005331 seconds
+Time elapsed: 0.00014240 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(1, 2), (1, 3)]
+[(1, 2), (2, 3)]
+[(1, 3), (3, 2)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00005567 seconds
+Time elapsed: 0.00011330 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]
 Approximation cost: 2
 -----
-[(2, 3)]
+[(1, 3), (2, 3)]
 [(2, 3), (3, 1)]
 
-Time elapsed: 0.00005487 seconds
+Time elapsed: 0.00016780 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[3, 1, 2]
 Approximation cost: 2
 -----
 [(1, 3), (2, 3)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00005376 seconds
+Time elapsed: 0.00017560 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(1, 3), (2, 3)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00006097 seconds
+Time elapsed: 0.00011420 seconds
 Input: [1, 2, 3]-[2, 3, 1]-[3, 1, 2]
 Approximation cost: 3
 -----
@@ -196,35 +201,37 @@ Approximation cost: 3
 [(2, 3), (3, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00006204 seconds
+Time elapsed: 0.00012570 seconds
 Input: [1, 2, 3]-[2, 3, 1]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(1, 2), (2, 3)]
 [(2, 1), (3, 1)]
 
-Time elapsed: 0.00006096 seconds
+Time elapsed: 0.00011910 seconds
 Input: [1, 2, 3]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
 [(1, 2), (2, 3)]
-[(3, 1), (3, 2)]
+[(1, 2), (3, 1)]
+[(2, 1), (3, 2)]
 
-Time elapsed: 0.00006037 seconds
+Time elapsed: 0.00010700 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
 [(1, 3), (3, 2)]
-[(2, 1), (2, 3)]
+[(1, 3), (2, 1)]
+[(2, 3), (3, 1)]
 
-Time elapsed: 0.00005755 seconds
+Time elapsed: 0.00013000 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[3, 1, 2]
 Approximation cost: 2
 -----
 [(1, 2), (3, 2)]
 [(1, 3), (2, 1)]
 
-Time elapsed: 0.00005115 seconds
+Time elapsed: 0.00015950 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[3, 2, 1]
 Approximation cost: 3
 -----
@@ -232,222 +239,233 @@ Approximation cost: 3
 [(1, 3), (2, 1)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00005394 seconds
+Time elapsed: 0.00019070 seconds
 Input: [1, 3, 2]-[2, 3, 1]-[3, 1, 2]
 Approximation cost: 2
 -----
 [(1, 2), (3, 2)]
 [(2, 3), (3, 1)]
 
-Time elapsed: 0.00005805 seconds
+Time elapsed: 0.00018810 seconds
 Input: [1, 3, 2]-[2, 3, 1]-[3, 2, 1]
 Approximation cost: 2
 -----
 [(1, 3), (3, 2)]
 [(2, 1), (3, 1)]
 
-Time elapsed: 0.00005568 seconds
+Time elapsed: 0.00011040 seconds
 Input: [1, 3, 2]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 2
 -----
-[(3, 2)]
+[(1, 2), (3, 2)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00005331 seconds
+Time elapsed: 0.00016940 seconds
 Input: [2, 1, 3]-[2, 3, 1]-[3, 1, 2]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(2, 1), (2, 3)]
+[(1, 3), (2, 1)]
+[(2, 3), (3, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00005562 seconds
+Time elapsed: 0.00018660 seconds
 Input: [2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Approximation cost: 2
 -----
-[(2, 1)]
-[(2, 1), (3, 2)]
+[(1, 3), (2, 1)]
+[(2, 1), (3, 1)]
 
-Time elapsed: 0.00005810 seconds
+Time elapsed: 0.00015130 seconds
 Input: [2, 1, 3]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
 [(1, 3), (2, 1)]
-[(3, 1), (3, 2)]
+[(1, 2), (3, 1)]
+[(2, 1), (3, 2)]
 
-Time elapsed: 0.00005780 seconds
+Time elapsed: 0.00017140 seconds
 Input: [2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 2
 -----
-[(3, 1)]
+[(2, 1), (3, 1)]
 [(1, 2), (3, 1)]
 
 Size = 4
 
-Time elapsed: 0.00008278 seconds
+Time elapsed: 0.00015200 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(1, 3)]
-[(2, 1), (2, 3)]
+[(1, 3), (2, 3)]
+[(1, 3), (3, 2)]
+[(2, 3), (3, 1)]
 
-Time elapsed: 0.00009967 seconds
+Time elapsed: 0.00020910 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]
 Approximation cost: 2
 -----
-[(1, 3)]
-[(1, 2), (3, 1)]
+[(1, 3), (2, 3)]
+[(1, 2), (3, 2)]
 
-Time elapsed: 0.00007338 seconds
+Time elapsed: 0.00016220 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 2, 1]
 Approximation cost: 3
 -----
-[(1, 3)]
-[(1, 3), (2, 1)]
+[(1, 3), (2, 3)]
+[(1, 3), (3, 2)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00007373 seconds
+Time elapsed: 0.00014240 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 1, 2]
 Approximation cost: 3
 -----
-[(1, 2)]
+[(1, 2), (2, 3)]
+[(1, 2), (3, 2)]
 [(2, 3), (3, 1)]
-[(1, 2), (3, 1)]
 
-Time elapsed: 0.00008136 seconds
+Time elapsed: 0.00014290 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(1, 2), (1, 3)]
+[(1, 2), (2, 3)]
+[(1, 3), (3, 2)]
 [(2, 1), (3, 1)]
 
-Time elapsed: 0.00007843 seconds
+Time elapsed: 0.00014260 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(1, 2)]
-[(3, 1), (3, 2)]
+[(1, 2), (2, 3)]
+[(1, 2), (3, 2)]
+[(2, 1), (3, 2)]
 
-Time elapsed: 0.00007604 seconds
+Time elapsed: 0.00015090 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
 Approximation cost: 3
 -----
-[(2, 3)]
+[(1, 3), (2, 3)]
 [(2, 3), (3, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00007915 seconds
+Time elapsed: 0.00022870 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Approximation cost: 2
 -----
-[(2, 3)]
+[(1, 3), (2, 3)]
 [(2, 1), (3, 1)]
 
-Time elapsed: 0.00007720 seconds
+Time elapsed: 0.00020080 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
 [(1, 3), (2, 3)]
-[(3, 1), (3, 2)]
+[(1, 2), (3, 1)]
+[(2, 1), (3, 2)]
 
-Time elapsed: 0.00008366 seconds
+Time elapsed: 0.00018130 seconds
 Input: [1, 2, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 3
 -----
 [(1, 2), (2, 3)]
-[(3, 1)]
+[(2, 1), (3, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00008096 seconds
+Time elapsed: 0.00009150 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
-Approximation cost: 2
+Approximation cost: 3
 -----
 [(1, 2), (3, 2)]
-[(2, 1), (2, 3)]
+[(1, 3), (2, 1)]
+[(2, 3), (3, 1)]
 
-Time elapsed: 0.00008000 seconds
+Time elapsed: 0.00009390 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Approximation cost: 3
 -----
 [(1, 3), (3, 2)]
-[(2, 1)]
-[(2, 1), (3, 2)]
+[(1, 3), (2, 1)]
+[(2, 1), (3, 1)]
 
-Time elapsed: 0.00008263 seconds
+Time elapsed: 0.00012410 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 3
 -----
-[(3, 2)]
+[(1, 2), (3, 2)]
 [(1, 3), (2, 1)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00008045 seconds
+Time elapsed: 0.00014520 seconds
 Input: [1, 3, 2]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 2
 -----
-[(3, 2)]
+[(1, 2), (3, 2)]
 [(2, 1), (3, 1)]
 
-Time elapsed: 0.00007933 seconds
+Time elapsed: 0.00014970 seconds
 Input: [2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 2
+Approximation cost: 3
 -----
-[(2, 1)]
-[(3, 1), (3, 2)]
+[(1, 3), (2, 1)]
+[(2, 1), (3, 1)]
+[(1, 2), (3, 1)]
 
 Size = 5
 
-Time elapsed: 0.00011389 seconds
+Time elapsed: 0.00013150 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]
 Approximation cost: 3
 -----
-[(1, 3)]
+[(1, 3), (2, 3)]
+[(1, 2), (3, 2)]
 [(2, 3), (3, 1)]
-[(1, 2), (3, 1)]
 
-Time elapsed: 0.00009942 seconds
+Time elapsed: 0.00017230 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 2, 1]
 Approximation cost: 3
 -----
-[(1, 3)]
-[(2, 1)]
+[(1, 3), (2, 3)]
+[(1, 3), (3, 2)]
+[(2, 1), (3, 1)]
+
+Time elapsed: 0.00012380 seconds
+Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
+Approximation cost: 3
+-----
+[(1, 3), (2, 3)]
+[(1, 2), (3, 2)]
 [(2, 1), (3, 2)]
 
-Time elapsed: 0.00011840 seconds
-Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 2
------
-[(1, 3)]
-[(3, 1), (3, 2)]
-
-Time elapsed: 0.00010133 seconds
+Time elapsed: 0.00012920 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 3
 -----
-[(1, 2)]
-[(3, 1)]
-[(1, 2), (3, 1)]
+[(1, 2), (2, 3)]
+[(1, 2), (3, 2)]
+[(2, 1), (3, 1)]
 
-Time elapsed: 0.00010188 seconds
+Time elapsed: 0.00019570 seconds
 Input: [1, 2, 3]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 3
 -----
-[(2, 3)]
-[(3, 1)]
+[(1, 3), (2, 3)]
+[(2, 1), (3, 1)]
 [(1, 2), (3, 1)]
 
-Time elapsed: 0.00010078 seconds
+Time elapsed: 0.00013610 seconds
 Input: [1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
 Approximation cost: 3
 -----
-[(3, 2)]
-[(2, 1)]
-[(2, 1), (3, 2)]
+[(1, 2), (3, 2)]
+[(1, 3), (2, 1)]
+[(2, 1), (3, 1)]
 
 Size = 6
 
-Time elapsed: 0.00026557 seconds
+Time elapsed: 0.00025490 seconds
 Input: [1, 2, 3]-[1, 3, 2]-[2, 1, 3]-[2, 3, 1]-[3, 1, 2]-[3, 2, 1]
-Approximation cost: 1
+Approximation cost: 3
 -----
-[]
+[(1, 3), (2, 3)]
+[(1, 2), (3, 2)]
+[(2, 1), (3, 1)]
 
