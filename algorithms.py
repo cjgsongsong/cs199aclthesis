@@ -8,37 +8,13 @@ def hasSwapPair(l1, l2):
             return True
     return False
 
-def components(upsilonTwo):
-    upsilon2 = upsilonTwo.copy()   
-    compfin = [[upsilon2[0]]]
-    upsilon2.pop(0)
-    index = 0
-    while upsilon2 != []:
-        added = False
-        for i in range(len(compfin)):
-            for j in compfin[i]:
-                if hasSwapPair(upsilon2[index].sequence, j.sequence):
-                    compfin[i].append(upsilon2[index])
-                    upsilon2.pop(index)
-                    added = True
-                    index = 0
-                    break
-            if added:
-                break
-        if not added:
-            index += 1
-            if len(upsilon2) <= index:
-                compfin.append([upsilon2[0]])
-                upsilon2.pop(0)
-                index = 0
-
-    return compfin
-
 def swapByPair(el, pair):
     l = el.sequence.copy()
     indexA = l.index(pair[0])
     indexB = l.index(pair[1])
-    
+    if abs(indexA-indexB) != 1:
+        return []
+ 
     temp = l[indexA]
     l[indexA] = l[indexB]
     l[indexB] = temp
@@ -64,20 +40,48 @@ def swapPair(ellone, elltwo):
             (a,b) = (l1[i], l1[i+1])
             hasPair = True
         elif l1[i] == l2[i-1] and l1[i-1] == l2[i]:
+            notSamePos+=1
             continue
         elif l1[i] != l2[i]:
             notSamePos += 1
-    if notSamePos == 1 and hasPair:
+    if notSamePos == 2 and hasPair:
         return (a,b)
     else:
         return (-1,-1) # no valid swap pair
+
+def components(upsilonTwo):
+    upsilon2 = upsilonTwo.copy()   
+    compfin = [[upsilon2[0]]]
+    upsilon2.pop(0)
+    index = 0
+    while upsilon2 != []:
+        added = False
+        for i in range(len(compfin)):
+            for j in compfin[i]:
+                (a, b) = swapPair(upsilon2[index],j)
+                if (a,b) != (-1, -1):
+                    compfin[i].append(upsilon2[index])
+                    upsilon2.pop(index)
+                    added = True
+                    index = 0
+                    break
+            if added:
+                break
+        if not added:
+            index += 1
+            if len(upsilon2) <= index:
+                compfin.append([upsilon2[0]])
+                upsilon2.pop(0)
+                index = 0
+
+    return compfin
 
 def findLOSwap(l, upsilonTwo, lmbda):
     for i in range(len(upsilonTwo)):
         (a,b) = swapPair(l,upsilonTwo[i])
         if (a,b) != (-1,-1) and upsilonTwo[i] not in lmbda:
-            return i
-    return -1
+            return i, (a,b)
+    return -1, (-1,-1)
 
 def setDiff(upsilonOne, lmbda):
     counter = 0
@@ -96,7 +100,7 @@ def getComparable(A, upsilonTwo, el, n):
     
     for i in range(n-1):
         Lprime = swapByIndex(el, i)
-        if Lprime not in upsilon2:
+        if Lprime not in upsilon2 and (el.sequence[i], el.sequence[i+1]) not in A:
             A.append((el.sequence[i], el.sequence[i+1]))
     
     tempUpsilon = upsilonTwo.copy()
@@ -119,7 +123,9 @@ def getIncomparable(B, upsilonTwo, ellone, elltwo):
         B.append(pair)
         for l3 in tempUpsilon:
             l4 = swapByPair(l3, pair)
-            if l4 not in upsilon2:
+            if l4 == []: 
+                continue
+            elif l4 not in upsilon2:
                 upsilonTwo.remove(l3)
                 upsilon2.remove(l3.sequence)
     return B, upsilonTwo
@@ -147,19 +153,17 @@ def algorithm1(upsilon: list[LinearOrder]):
             l2index = -1
             for i in range(len(lmbda)):
                 ellOne = lmbda[i]
-                l2index = findLOSwap(ellOne, upsilonTwo, lmbda)
+                l2index, (a,b) = findLOSwap(ellOne, upsilonTwo, lmbda)
                 if l2index != -1:
                     break
             if l2index == -1:
                 break
-
+            # B.append((a,b))
             ellTwo = upsilonTwo[l2index]
             lmbda.append(ellTwo)
             A, upsilonTwo = getComparable(A, upsilonTwo, ellTwo, n)
-            if l2index == -1:
-                break
             B, upsilonTwo = getIncomparable(B, upsilonTwo, ellOne, ellTwo)
-        
+
         PstarK = Poset(n, A)
         Pstar.append(PstarK)
         lmbda = list(set(lmbda))

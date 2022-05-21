@@ -1,8 +1,7 @@
 import sys
-from itertools import permutations
 from classes import Timer
 from algorithms import algorithm1, algorithm2
-from utils import read, preprocess, verify
+from utils import read, preprocess
 
 args = sys.argv[1:]
 if len(args) == 2:
@@ -21,15 +20,6 @@ for input in inputs:
 
     print(count)
     count += 1
-
-    if args[0] == "algo1" and input.count('-') != 0:
-        pass
-        #print(input)
-        #for permutation in list(permutations(preprocess(input))):
-        #    solution = [poset.relations for poset in algorithm1(permutation)]
-        #    if verify(preprocess(permutation, False), solution):
-        #        input = permutation
-        #        break
 
     timer.start()
     if args[0] == "algo1":
