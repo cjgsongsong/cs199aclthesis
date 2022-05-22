@@ -3,6 +3,18 @@
 This repository contains all the codes used in and results generated from the empirical assessments
 of the two approximation algorithms.
 
+## Installation
+
+Before running `analysis.ipynb`, install the necessary packages.
+```bash
+pip install jupyter notebook
+pip install matplotlib
+pip install numpy
+pip install pandas
+pip install scipy
+pip install seaborn
+```
+
 ## Usage
 
 To generate linear order inputs,

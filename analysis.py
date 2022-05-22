@@ -15,6 +15,7 @@ for keyword in keywords:
     else:
         inputs = read(f"{keyword}/{args[1]}/{args[0]}v{keyword}.txt")
 
+    count = 0
     dictlist = []
     isAllCorrect = True
     for input in split(inputs):
@@ -22,6 +23,7 @@ for keyword in keywords:
             d = extract(keyword, input)
             if verify(d["input"], d[f"output_{keyword}"]):
                 dictlist.append(d)
+                count += 1
             else:
                 isAllCorrect = False
                 print(f"Incorrect solution detected from {keyword}!")
@@ -38,4 +40,4 @@ for keyword in keywords:
             dw.writeheader()
             dw.writerows(dictlist)
         
-        print('FINISH')
+        print(f'Compiled {count} entries for {keyword}')
