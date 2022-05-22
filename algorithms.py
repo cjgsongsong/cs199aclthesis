@@ -216,8 +216,33 @@ def algorithm2(upsilon: list[LinearOrder]):
     
     return PCurrentFinal
 
-def algorithm1v2(upsilon: list[LinearOrder]):
+def algorithm1i(upsilon: list[LinearOrder]):
     pass
 
-def algorithm2v2(upsilon: list[LinearOrder]):
-    pass
+def algorithm2i(upsilon: list[LinearOrder]):
+    Pstar = upsilon
+    PApprox = []
+    canBeImproved = True
+    while canBeImproved:
+        canBeImproved = False
+        
+        while len(Pstar) > 0:
+            poset1 = Pstar[0]
+            Pstar.pop(0)
+            haspair = False
+            for i in range(len(Pstar)):
+                PstarRK = combinePoset(poset1, Pstar[i])
+                if PstarRK.relations != None:
+                    PApprox.append(PstarRK)
+                    Pstar.pop(i)
+                    haspair = True
+                    canBeImproved = True
+                    break
+
+            if not haspair:
+                PApprox.append(poset1)
+
+        Pstar = PApprox.copy()
+        PApprox = []   
+
+    return Pstar

@@ -38,6 +38,7 @@ python analysis.py <vertex count*> <type**>
 | --------- | ----------- |
 | `algo1` | generates approximations of Algorithm 1 |
 | `algo2` | generates approximations of Algorithm 2 |
+| `algo2i` | generates approximations of improved Algorithm 2 |
 
 | type | description |
 | ---- | ----------- |

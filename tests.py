@@ -1,6 +1,6 @@
 import sys
 from classes import Timer
-from algorithms import algorithm1, algorithm2
+from algorithms import algorithm1, algorithm2, algorithm2i
 from utils import read, preprocess
 
 args = sys.argv[1:]
@@ -26,6 +26,8 @@ for input in inputs:
         solution = algorithm1(preprocess(input))
     elif args[0] == "algo2":
         solution = algorithm2(preprocess(input))
+    elif args[0] == "algo2i":
+        solution = algorithm2i(preprocess(input))
     output.write(f"Time elapsed: {timer.stop():0.8f} seconds\n")
     output.write(f"Input: {preprocess(input, False)}\n")
     output.write(f"Approximation cost: {len(solution)}\n")

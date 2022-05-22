@@ -1,7 +1,7 @@
 import csv, sys
 from utils import read, split, extract, verify
 
-keywords = ["algo1", "algo2", "optsol"]
+keywords = ["algo1", "algo2", "algo2i", "optsol"]
 
 args = sys.argv[1:]
 if len(args) == 1:
