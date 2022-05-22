@@ -1,13 +1,19 @@
-import sys
+import os, sys
 from classes import Timer
 from algorithms import algorithm1, algorithm2, algorithm2i
 from utils import read, preprocess
 
 args = sys.argv[1:]
 if len(args) == 2:
+    if not os.path.exists(f"{args[0]}/"):
+        os.makedirs(f"{args[0]}/")
+
     inputs = read(f"inputs/{args[1]}vertices.txt")
     output = open(f"{args[0]}/{args[1]}v{args[0]}.txt", "w")
 else:
+    if not os.path.exists(f"{args[0]}/{args[2]}/"):
+        os.makedirs(f"{args[0]}/{args[2]}/")
+
     inputs = read(f"inputs/{args[2]}/{args[1]}{args[2]}.txt")
     output = open(f"{args[0]}/{args[2]}/{args[1]}v{args[0]}.txt", "w")
 

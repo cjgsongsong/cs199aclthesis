@@ -1,4 +1,4 @@
-import csv, sys
+import os, csv, sys
 from utils import read, split, extract, verify
 
 keywords = ["algo1", "algo2", "algo2i", "optsol"]
@@ -29,6 +29,9 @@ for keyword in keywords:
                 break
 
     if isAllCorrect:
+        if not os.path.exists("results/"):
+            os.makedirs("results/")
+
         keys = dictlist[0].keys()
         with open(f'results/{args[0]}v{keyword}{args[1]}.csv', 'w', newline='') as fileOutput:
             dw = csv.DictWriter(fileOutput, keys)

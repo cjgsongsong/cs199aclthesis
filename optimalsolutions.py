@@ -1,4 +1,4 @@
-import sys, fileinput
+import os, sys, fileinput
 from classes import Graph, Timer
 from itertools import chain, combinations
 
@@ -51,6 +51,9 @@ v = int(sys.argv[1])
 input = open(f"inputs/{v}vertices.txt", "r")
 lines = input.readlines()
 input.close()
+
+if not os.path.exists("optsol/"):
+    os.makedirs("optsol/")
 
 count = 1
 timer = Timer()

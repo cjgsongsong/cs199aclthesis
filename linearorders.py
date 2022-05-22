@@ -1,4 +1,4 @@
-import sys
+import os, sys
 from itertools import permutations, combinations
 from classes import Poset
 
@@ -54,6 +54,9 @@ def generateRootedRelations(parent, vertices, relations):
 
         return truerels
 
+if not os.path.exists("inputs/"):
+    os.makedirs("inputs/")
+
 args = sys.argv[1:]
 args[1] = int(args[1])
 
@@ -69,6 +72,9 @@ if args[0] == 'all':
 
     print(f"Generated all linear order sets with {args[1]} vertices")
 else:
+    if not os.path.exists(f"inputs/{args[0]}/"):
+        os.makedirs(f"inputs/{args[0]}/")
+
     vertices = [v for v in range(1, args[1] + 1)]
     rels = []
     for root in vertices:
