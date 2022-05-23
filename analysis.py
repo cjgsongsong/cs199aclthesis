@@ -8,8 +8,6 @@ if len(args) == 1:
     args.append("")
 
 for keyword in keywords:
-    if keyword == "optsol" and args[1] != "": continue
-
     if args[1] == "":
         inputs = read(f"{keyword}/{args[0]}v{keyword}.txt")
     else:
