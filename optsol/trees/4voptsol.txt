@@ -1,0 +1,768 @@
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[1, 3, 2, 4]-[1, 3, 4, 2]-[1, 4, 2, 3]-[1, 4, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 3), (1, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 2, 3]-[4, 1, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 3), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 2, 4]-[3, 1, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 4), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 1, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 1), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 3, 2, 4]-[1, 3, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 3), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[1, 4, 2, 3]-[1, 4, 3, 2]-[4, 1, 2, 3]-[4, 1, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 3), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 2, 4]-[3, 1, 4, 2]-[3, 4, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 1), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[1, 4, 2, 3]-[1, 4, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 4), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 3, 2, 4]-[1, 3, 4, 2]-[3, 1, 2, 4]-[3, 1, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 4), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 2, 3]-[4, 1, 3, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (4, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 4), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 1, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (1, 4), (2, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 1, 3]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 1), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 1), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[2, 4, 3, 1]-[3, 2, 4, 1]-[3, 4, 2, 1]-[4, 2, 3, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 1), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 1), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 4, 3]-[2, 4, 1, 3]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[2, 3, 4, 1]-[3, 2, 1, 4]-[3, 2, 4, 1]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 1), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 3, 1]-[4, 2, 3, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 3, 1, 4]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 1), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 1, 3]-[2, 4, 3, 1]-[4, 2, 1, 3]-[4, 2, 3, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (4, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[3, 2, 4, 1]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 4), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 3), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 2, 3]-[4, 1, 2, 3]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 3), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[3, 1, 2, 4]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 4), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[1, 4, 3, 2]-[3, 1, 4, 2]-[3, 4, 1, 2]-[4, 1, 3, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 2), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 3), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[1, 4, 2, 3]-[4, 1, 2, 3]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 3), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[1, 3, 4, 2]-[3, 1, 2, 4]-[3, 1, 4, 2]-[3, 4, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 2), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 3, 2]-[4, 1, 3, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 4), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 3, 2, 4]-[3, 1, 2, 4]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 4), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 2, 3]-[1, 4, 3, 2]-[4, 1, 2, 3]-[4, 1, 3, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (4, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[3, 1, 4, 2]-[3, 4, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 4), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 1, 4, 3]-[2, 3, 1, 4]-[2, 3, 4, 1]-[2, 4, 1, 3]-[2, 4, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 3), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 2, 1, 3]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 3), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 1, 4]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 4), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 2, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 2), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 3, 1, 4]-[2, 3, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 3), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 4, 3]-[2, 4, 1, 3]-[2, 4, 3, 1]-[4, 2, 1, 3]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 3), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 1, 4]-[3, 2, 4, 1]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 2), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 4, 3]-[2, 4, 1, 3]-[2, 4, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 4), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 3, 1, 4]-[2, 3, 4, 1]-[3, 2, 1, 4]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 4), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 2, 1, 3]-[4, 2, 3, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (4, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 4), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[1, 3, 2, 4]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 3), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[1, 4, 2, 3]-[1, 4, 3, 2]-[4, 1, 2, 3]-[4, 1, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 3), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 1, 4, 3]-[2, 4, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 1), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[1, 4, 2, 3]-[1, 4, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (1, 4), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[1, 3, 2, 4]-[2, 1, 3, 4]-[2, 1, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (1, 4), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 2, 3]-[4, 1, 3, 2]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (4, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 4), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 2, 4]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 4), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 4, 2]-[3, 4, 1, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[2, 3, 4, 1]-[2, 4, 3, 1]-[3, 2, 1, 4]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 4), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 2, 1]-[4, 2, 3, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 4), (3, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[3, 1, 2, 4]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 4), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 1, 2]-[3, 4, 2, 1]-[4, 2, 3, 1]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (4, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[2, 4, 3, 1]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (3, 1), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[1, 3, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (3, 2), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 3, 2]-[4, 1, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (3, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[2, 1, 3, 4]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 3), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[1, 4, 2, 3]-[2, 1, 4, 3]-[2, 4, 1, 3]-[4, 1, 2, 3]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 3), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 4), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[1, 4, 3, 2]-[4, 1, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (3, 2), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[2, 1, 3, 4]-[2, 1, 4, 3]-[2, 4, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 3), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 2, 3]-[4, 1, 2, 3]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 3), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (3, 4), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 3, 2, 4]-[2, 1, 3, 4]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 4), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 2, 3]-[1, 4, 3, 2]-[4, 1, 2, 3]-[4, 1, 3, 2]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (4, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[2, 1, 4, 3]-[2, 4, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 4), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 2, 4]-[3, 1, 4, 2]-[3, 2, 1, 4]-[3, 2, 4, 1]-[3, 4, 1, 2]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (3, 2), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (3, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[2, 3, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (3, 1), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 3, 1]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (3, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 2, 4]-[3, 2, 1, 4]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (3, 1), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 4, 2]-[3, 4, 1, 2]-[3, 4, 2, 1]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (3, 2), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[2, 3, 4, 1]-[2, 4, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (2, 4), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (3, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 4, 2]-[3, 4, 1, 2]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (3, 4), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]-[2, 3, 4, 1]-[3, 1, 2, 4]-[3, 2, 1, 4]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (3, 1), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 2, 3, 1]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (4, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (3, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[1, 4, 2, 3]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 4), (2, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[1, 3, 4, 2]-[1, 4, 3, 2]-[3, 1, 2, 4]-[3, 1, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (1, 4), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 1, 3, 4]-[2, 1, 4, 3]-[2, 3, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 1), (2, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 1), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[1, 3, 4, 2]-[1, 4, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (1, 4), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[1, 4, 2, 3]-[2, 1, 3, 4]-[2, 1, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (1, 4), (2, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 1, 2, 4]-[3, 1, 4, 2]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (3, 1), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 3), (3, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 2, 3]
+Optimal solution cost: 1
+-----
+[(1, 2), (2, 3), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 1, 2]-[4, 1, 3, 2]-[4, 3, 1, 2]
+Optimal solution cost: 1
+-----
+[(1, 2), (3, 2), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[2, 4, 1, 3]-[2, 4, 3, 1]-[4, 2, 1, 3]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (2, 3), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 4, 1]-[3, 4, 2, 1]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(2, 1), (3, 2), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 3), (3, 2), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 1, 3]-[4, 1, 2, 3]-[4, 2, 1, 3]
+Optimal solution cost: 1
+-----
+[(1, 3), (2, 3), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 4, 1]-[3, 4, 1, 2]-[3, 4, 2, 1]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 1), (3, 2), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[2, 4, 3, 1]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (3, 1), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 2, 3]-[1, 4, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 4), (4, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[3, 1, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 4), (3, 4), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[2, 1, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 4), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 3, 2, 4]-[2, 1, 3, 4]-[2, 3, 1, 4]-[3, 1, 2, 4]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 4), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 2, 3]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 3), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 4, 2]-[1, 4, 3, 2]-[3, 1, 4, 2]
+Optimal solution cost: 1
+-----
+[(1, 4), (3, 2), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[1, 2, 4, 3]-[2, 1, 3, 4]-[2, 1, 4, 3]-[2, 3, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 3), (2, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[3, 1, 2, 4]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 4), (3, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 4, 3, 2]
+Optimal solution cost: 1
+-----
+[(1, 4), (3, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 4, 3]-[1, 4, 2, 3]-[2, 1, 4, 3]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 3), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 3, 2, 4]-[1, 3, 4, 2]-[3, 1, 2, 4]-[3, 1, 4, 2]-[3, 2, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (3, 2), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [1, 2, 3, 4]-[2, 1, 3, 4]-[2, 3, 1, 4]
+Optimal solution cost: 1
+-----
+[(1, 4), (2, 3), (3, 4)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 2, 3]-[4, 1, 3, 2]-[4, 2, 1, 3]-[4, 2, 3, 1]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(4, 1), (4, 2), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 1, 2]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 4), (4, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 1, 3]-[2, 4, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (4, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (3, 4), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 2, 3]-[4, 2, 1, 3]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (4, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 4, 1, 2]-[3, 4, 2, 1]-[4, 1, 3, 2]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 2), (4, 1), (4, 2)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]-[2, 4, 1, 3]-[2, 4, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (2, 4), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 4), (3, 2), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [4, 1, 3, 2]-[4, 3, 1, 2]-[4, 3, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 2), (4, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 4, 1, 3]-[2, 4, 3, 1]-[4, 1, 2, 3]-[4, 2, 1, 3]-[4, 2, 3, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (4, 1), (4, 3)]
+
+Time elapsed: 0.00002735 seconds
+Input: [3, 2, 4, 1]-[3, 4, 1, 2]-[3, 4, 2, 1]
+Optimal solution cost: 1
+-----
+[(3, 2), (3, 4), (4, 1)]
+
+Time elapsed: 0.00002735 seconds
+Input: [2, 3, 4, 1]
+Optimal solution cost: 1
+-----
+[(2, 3), (3, 4), (4, 1)]
+

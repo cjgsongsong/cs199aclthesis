@@ -1,7 +1,8 @@
 # *On Approximation of the General Poset Cover Problem*
 
 This repository contains all the codes used in and results generated from the empirical assessments
-of the two approximation algorithms.
+of the two approximation algorithms studied by Kaizz Angeles and CJ Songsong for their undergraduate
+thesis under the advisory of Ivy Ordanel. 
 
 ## Installation
 
@@ -24,7 +25,7 @@ python linearorders.py <keyword> <vertex count*>
 
 To generate optimal solutions,
 ```bash
-python optimalsolutions.py <vertex count*>
+python optimalsolutions.py <vertex count*> <type**>
 ```
 
 To generate approximations,
