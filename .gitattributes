@@ -1,0 +1,9 @@
+algo1/trees/6valgo1.txt filter=lfs diff=lfs merge=lfs -text
+algo2/trees/6valgo2.txt filter=lfs diff=lfs merge=lfs -text
+algo2i/trees/6valgo2i.txt filter=lfs diff=lfs merge=lfs -text
+results/5valgo1.csv filter=lfs diff=lfs merge=lfs -text
+results/5valgo2.csv filter=lfs diff=lfs merge=lfs -text
+results/5valgo2i.csv filter=lfs diff=lfs merge=lfs -text
+results/6valgo1trees.csv filter=lfs diff=lfs merge=lfs -text
+results/6valgo2trees.csv filter=lfs diff=lfs merge=lfs -text
+results/6valgo2itrees.csv filter=lfs diff=lfs merge=lfs -text
