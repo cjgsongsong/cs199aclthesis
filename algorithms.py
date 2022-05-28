@@ -34,12 +34,12 @@ def swapPair(ellone, elltwo):
     notSamePos = 0
     (a,b) = (-1,-1)
     hasPair = False
-    for i in range(len(l1)-1):
-        if l1[i] == l2[i+1] and l1[i+1] == l2[i]:
+    for i in range(len(l1)):
+        if (i != len(l1)-1) and l1[i] == l2[i+1] and l1[i+1] == l2[i]:
             notSamePos += 1
             (a,b) = (l1[i], l1[i+1])
             hasPair = True
-        elif l1[i] == l2[i-1] and l1[i-1] == l2[i]:
+        elif (i != 0) and l1[i] == l2[i-1] and l1[i-1] == l2[i]:
             notSamePos+=1
             continue
         elif l1[i] != l2[i]:
@@ -109,25 +109,29 @@ def getComparable(A, upsilonTwo, el, n):
             upsilonTwo.remove(i)
     return A, upsilonTwo
 
-def getIncomparable(B, upsilonTwo, ellone, elltwo):
-    (a,b) = swapPair(ellone, elltwo)
-    pair = (a,b)
-    
-    upsilon2 = [] # will be used for "not in" conditional
-    for i in upsilonTwo:
-        upsilon2.append(i.sequence)
-
-    tempUpsilon = upsilonTwo.copy()
-    
+def getIncomparable(B, upsilonTwo, pair):
     if pair not in B:
         B.append(pair)
-        for l3 in tempUpsilon:
-            l4 = swapByPair(l3, pair)
-            if l4 == []: 
-                continue
-            elif l4 not in upsilon2:
-                upsilonTwo.remove(l3)
-                upsilon2.remove(l3.sequence)
+        done = False
+        removed = []
+        while not done:
+            done = True
+            upsilon2 = [] # will be used for "not in" conditional
+            for i in upsilonTwo:
+                upsilon2.append(i.sequence)
+
+            tempUpsilon = upsilonTwo.copy()
+            for l3 in tempUpsilon:
+                for p in B:
+                    l4 = swapByPair(l3, p)
+                    if l4 == []: 
+                        continue
+                    elif l4 not in upsilon2 and l3 not in removed:
+                        removed.append(l3)
+                        upsilonTwo.remove(l3)
+                        upsilon2.remove(l3.sequence)
+                        done = False
+
     return B, upsilonTwo
 
 def algorithm1(upsilon: list[LinearOrder]):
@@ -146,11 +150,11 @@ def algorithm1(upsilon: list[LinearOrder]):
         
         lmbda =  [ell]
         A, upsilonTwo = getComparable(A, upsilonTwo, ell, n)
-        
-        while upsilonTwo != lmbda:
+
+        while set(upsilonTwo) != set(lmbda):
             ellOne = lmbda[0]
-            
             l2index = -1
+            (a,b) = (-1,-1)
             for i in range(len(lmbda)):
                 ellOne = lmbda[i]
                 l2index, (a,b) = findLOSwap(ellOne, upsilonTwo, lmbda)
@@ -158,11 +162,11 @@ def algorithm1(upsilon: list[LinearOrder]):
                     break
             if l2index == -1:
                 break
-            # B.append((a,b))
+            pair = (a,b)
             ellTwo = upsilonTwo[l2index]
             lmbda.append(ellTwo)
             A, upsilonTwo = getComparable(A, upsilonTwo, ellTwo, n)
-            B, upsilonTwo = getIncomparable(B, upsilonTwo, ellOne, ellTwo)
+            B, upsilonTwo = getIncomparable(B, upsilonTwo, pair)
 
         PstarK = Poset(n, A)
         Pstar.append(PstarK)
