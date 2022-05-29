@@ -44,7 +44,7 @@ def remove(string, chars):
         
     return string
 
-def preprocess(input, toLO = True, toPoset = False):
+def preprocess(input, toLO = True, toPoset = False, toList = False):
     input = input.strip("\n")
     
     if toLO:
@@ -62,6 +62,13 @@ def preprocess(input, toLO = True, toPoset = False):
             inputRels.append((int(a), int(remove(b, " ),]"))))
         
         return inputRels
+    elif toList:
+        lst = []
+        for elem in input.split('\'')[1:-1]:
+            if '[' in elem:
+                lst.append(elem)
+        
+        return lst        
     else:
         return input
 
@@ -75,8 +82,54 @@ def split(txt):
     
     return data
 
-def countVertices(lo_input):
-    return lo_input.split('-')[0].count(',') + 1
+def _get_value(entry):
+    return entry.strip("\n").split(":")[1][1:]
+
+def extract(keyword, data_raw, ref_idx = 1):
+    data = {}
+    
+    data["input"] = _get_value(data_raw[ref_idx])
+
+    data[f"cost_{keyword}"] = int(_get_value(data_raw[ref_idx + 1]))
+    data[f"output_{keyword}"] = [preprocess(datum, False) for datum
+                                 in data_raw[ref_idx + 3:len(data_raw)]]
+    
+    if ref_idx == 1:
+        data[f"runtime_{keyword}"] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
+
+    return data
+
+def getLinearOrders(input):
+    return sorted([lo.sequence for lo in preprocess(input)])
+
+def getLinearExtensions(size, output, perPoset = False):
+    ell = []
+    for rels in output:
+        poset = Poset(size, preprocess(rels, False, True))
+        if perPoset:            
+            ell.append(poset.generateLinearExtensions())
+        else:
+            for le in poset.generateLinearExtensions():
+                if le not in ell:
+                    ell.append(le)
+    
+    if perPoset:
+        return ell
+    return sorted(ell)
+
+def verify(input, output, shouldLog = False):
+    upsilon = getLinearOrders(input)
+    ell = getLinearExtensions(len(upsilon[0]), output)
+    
+    if shouldLog:
+        print(input)
+        print(output)
+        print("-----")
+        print(upsilon)
+        print(ell)
+
+    return upsilon == ell
+
 
 def countInversions(lo_input):
     count = 0
@@ -105,45 +158,5 @@ def countSwapPairs(lo_input):
     
     return count
 
-def _get_value(entry):
-    return entry.strip("\n").split(":")[1][1:]
-
-def extract(keyword, data_raw, ref_idx = 1):
-    data = {}
-    
-    data["input"] = _get_value(data_raw[ref_idx])
-
-    data[f"cost_{keyword}"] = int(_get_value(data_raw[ref_idx + 1]))
-    data[f"output_{keyword}"] = [preprocess(datum, False) for datum
-                                 in data_raw[ref_idx + 3:len(data_raw)]]
-    
-    if ref_idx == 1:
-        data[f"runtime_{keyword}"] = float(_get_value(data_raw[ref_idx - 1]).split(' ')[0])
-
-    return data
-
-def getLinearOrders(input):
-    return sorted([lo.sequence for lo in preprocess(input)])
-
-def getLinearExtensions(size, output):
-    ell = []
-    for rels in output:
-        poset = Poset(size, preprocess(rels, False, True))
-        for le in poset.generateLinearExtensions():
-            if le not in ell:
-                ell.append(le)
-    
-    return sorted(ell)
-
-def verify(input, output, shouldLog = False):
-    upsilon = getLinearOrders(input)
-    ell = getLinearExtensions(len(upsilon[0]), output)
-    
-    if shouldLog:
-        print(input)
-        print(output)
-        print("-----")
-        print(upsilon)
-        print(ell)
-
-    return upsilon == ell
+def countVertices(lo_input):
+    return lo_input.split('-')[0].count(',') + 1
