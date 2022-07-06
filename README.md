@@ -1,8 +1,8 @@
 # *On Approximation of the General Poset Cover Problem*
 
-This repository contains all the codes used in and results generated from the empirical assessments
+This repository contains all the codes used in the empirical assessments
 of the two approximation algorithms studied by Kaizz Angeles and CJ Songsong for their undergraduate
-thesis under the advisory of Ivy Ordanel. 
+thesis under the advisory of Ivy Ordanel. Results generated are accessible via [https://bit.ly/OnApproxFiles](https://bit.ly/OnApproxFiles). Manuscript is available on [https:/bit.ly/OnApproxManuscript](https://bit.ly/OnApproxManuscript).
 
 ## Installation
 
@@ -45,7 +45,6 @@ python analysis.py <vertex count*> <type**>
 | ------- | ----------- |
 | `all` | generates all linear order sets with `vertex count` vertices |
 | `trees` | generates all linear order sets of trees with `vertex count` vertices |
-| `hammocks ` | generates all linear order sets of hammock posets with `vertex count` vertices |
 
 | algorithm | description |
 | --------- | ----------- |
@@ -56,4 +55,3 @@ python analysis.py <vertex count*> <type**>
 | type | description |
 | ---- | ----------- |
 | `trees` | uses files concerning trees |
-| `hammocks` | uses files concerning hammocks |

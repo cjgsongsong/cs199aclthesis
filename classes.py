@@ -68,12 +68,9 @@ class Graph:
         self.adjList = [[] for _ in range(N)]
 
         self.indegree = [0] * N
-        # add edges to the undirected graph
         for (src, dst) in edges:
-            # add an edge from source to destination
             self.adjList[src-1].append(dst-1)
  
-            # increment in-degree of destination vertex by 1
             self.indegree[dst-1] = self.indegree[dst-1] + 1
     
     def _findAllTopologicalOrders(self, path, marked, N):

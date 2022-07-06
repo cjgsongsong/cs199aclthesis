@@ -47,7 +47,7 @@ def swapPair(ellone, elltwo):
     if notSamePos == 2 and hasPair:
         return (a,b)
     else:
-        return (-1,-1) # no valid swap pair
+        return (-1,-1)
 
 def components(upsilonTwo):
     upsilon2 = upsilonTwo.copy()   
@@ -94,7 +94,7 @@ def setDiff(upsilonOne, lmbda):
     return upsilonOne
 
 def getComparable(A, upsilonTwo, el, n):
-    upsilon2 = [] # will be used for "not in" conditional
+    upsilon2 = []
     for i in upsilonTwo:
         upsilon2.append(i.sequence)
     
@@ -116,7 +116,7 @@ def getIncomparable(B, upsilonTwo, pair):
         removed = []
         while not done:
             done = True
-            upsilon2 = [] # will be used for "not in" conditional
+            upsilon2 = []
             for i in upsilonTwo:
                 upsilon2.append(i.sequence)
 
@@ -140,11 +140,10 @@ def algorithm1(upsilon: list[LinearOrder]):
     n = len(upsilon[0].vertices)
 
     while upsilonOne != []:
-        # select L in upsilonOne
         ell = upsilonOne[0]
 
         con_comp = components(upsilonOne.copy())
-        upsilonTwo = con_comp[0] # set of linear orders in connected component of G(Y') that contains L
+        upsilonTwo = con_comp[0]
         A = []
         B = []
         

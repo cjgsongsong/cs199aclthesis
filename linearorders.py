@@ -3,28 +3,6 @@ from itertools import permutations, combinations
 from classes import Poset
 from utils import isAllConnected, generateRootedRelations
 
-def generateHammockRelations(parent, vertices, relations, isHammockLevel):
-    # TO-DO: fix
-    if len(vertices) == 1:
-        return [sorted(relations)]
-    else:
-        rels = []
-        for child in vertices:
-            newVertices = [v for v in vertices if v != child]
-            newRelations = relations + [(parent, child)]
-            if isHammockLevel:
-                rels.extend(generateHammockRelations(parent, newVertices, newRelations, True))
-                rels.extend(generateHammockRelations(child, newVertices, newRelations, False))
-            else:
-                rels.extend(generateHammockRelations(child, newVertices, newRelations, True))
-                rels.extend(generateHammockRelations(child, newVertices, newRelations, False))
-        
-        truerels = []
-        for rel in rels:
-            if rel not in truerels: truerels.append(rel)
-
-        return rels
-
 if not os.path.exists("inputs/"):
     os.makedirs("inputs/")
 
@@ -53,8 +31,6 @@ else:
         
         if args[0] == 'trees':
             rootedRels = generateRootedRelations(root, newVertices, [])
-        elif args[0] == 'hammocks':
-            rootedRels = generateHammockRelations(root, newVertices, [], False)
         
         for rel in rootedRels:
             if isAllConnected(vertices, rel) and rel not in rels: 
