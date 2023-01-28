@@ -2,7 +2,7 @@
 
 This repository contains all the codes used in the empirical assessments
 of the two approximation algorithms studied by Kaizz Angeles and CJ Songsong for their undergraduate
-thesis under the advisory of Ivy Ordanel. Results generated are accessible via [https://bit.ly/OnApproxFiles](https://bit.ly/OnApproxFiles). Manuscript is available on [https:/bit.ly/OnApproxManuscript](https://bit.ly/OnApproxManuscript).
+thesis under the advisory of Ivy Ordanel. Results generated are accessible via [https://bit.ly/OnApprox-Files](https://bit.ly/OnApprox-Files). Manuscript is available on [https:/bit.ly/OnApprox-Manuscript](https://bit.ly/OnApprox-Manuscript).
 
 ## Installation
 
